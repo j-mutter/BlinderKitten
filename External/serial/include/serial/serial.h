@@ -450,6 +450,8 @@ public:
    * reading or writing is complete, when a timeout occurs, or when an
    * exception occurs.
    *
+   * A timeout of 0 enables non-blocking mode.
+   *
    * \param timeout A serial::Timeout struct containing the inter byte
    * timeout, and the read and write timeout constants and multipliers.
    *
@@ -486,7 +488,7 @@ public:
    * 110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 56000,
    * 57600, 115200
    * Some other baudrates that are supported by some comports:
-   * 128000, 153600, 230400, 256000, 460800, 921600
+   * 128000, 153600, 230400, 256000, 460800, 500000, 921600
    *
    * \param baudrate An integer that sets the baud rate for the serial port.
    *
@@ -645,11 +647,6 @@ public:
   bool
   getCD ();
 
-  /*! Returns system handle of the serial port */
-  int
-  getHandle();
-
-
 private:
   // Disable copy constructors
   Serial(const Serial&);
@@ -722,7 +719,7 @@ public:
   virtual ~IOException() throw() {}
   IOException (const IOException& other) : line_(other.line_), e_what_(other.e_what_), errno_(other.errno_) {}
 
-  int getErrorNumber () { return errno_; }
+  int getErrorNumber () const { return errno_; }
 
   virtual const char* what () const throw () {
     return e_what_.c_str();
