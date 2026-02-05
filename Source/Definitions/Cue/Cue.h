@@ -75,7 +75,7 @@ public:
 
     void triggerTriggered(Trigger* t) override;
     void onContainerParameterChangedInternal(Parameter* p) override;
-    void onControllableFeedbackUpdate(ControllableContainer* cc, Controllable* c);
+    void onControllableFeedbackUpdate(ControllableContainer* cc, Controllable* c) override;
     void controllableStateChanged(Controllable* c) override;
 
     void computeValues();
