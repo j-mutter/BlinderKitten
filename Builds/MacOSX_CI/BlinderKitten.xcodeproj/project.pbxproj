@@ -2393,7 +2393,7 @@
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include";
 				OTHER_LDFLAGS = "-lServus -lndi -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
@@ -2466,7 +2466,7 @@
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include";
 				OTHER_LDFLAGS = "-lServus -lndi -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
