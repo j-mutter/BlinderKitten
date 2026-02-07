@@ -266,6 +266,217 @@ void DMXOpenUSBFTDIDevice::onContainerParameterChanged(Parameter* p)
 	}
 }
 
+#elif JUCE_WINDOWS
+
+DMXOpenUSBFTDIDevice::DMXOpenUSBFTDIDevice() :
+	DMXDevice("OpenDMX FTDI", OPENDMX_FTDI, false),
+	handle(NULL),
+	isOpen(false),
+	selectedDeviceIndex(-1),
+	defaultLatency(16)
+{
+	deviceSelector = addEnumParameter("FTDI Device", "Select the FTDI USB device to use");
+	refreshDeviceList();
+}
+
+DMXOpenUSBFTDIDevice::~DMXOpenUSBFTDIDevice()
+{
+	closeDevice();
+}
+
+void DMXOpenUSBFTDIDevice::refreshDeviceList()
+{
+	int previousSelection = selectedDeviceIndex;
+	deviceSelector->clearOptions();
+	deviceSelector->addOption("None", -1);
+
+	Array<FTDIDeviceInfo> devices = enumerateDevices();
+
+	for (const auto& dev : devices)
+	{
+		String label = dev.name.isEmpty() ? dev.serial : dev.name + " (" + dev.serial + ")";
+		deviceSelector->addOption(label, (int)dev.id);
+	}
+
+	if (previousSelection >= 0)
+	{
+		deviceSelector->setValueWithData(previousSelection);
+	}
+}
+
+Array<FTDIDeviceInfo> DMXOpenUSBFTDIDevice::enumerateDevices()
+{
+	Array<FTDIDeviceInfo> result;
+
+	DWORD numDevices = 0;
+	FT_STATUS status = FT_CreateDeviceInfoList(&numDevices);
+	if (status != FT_OK || numDevices == 0)
+	{
+		return result;
+	}
+
+	FT_DEVICE_LIST_INFO_NODE* devInfo = new FT_DEVICE_LIST_INFO_NODE[numDevices];
+
+	if (FT_GetDeviceInfoList(devInfo, &numDevices) == FT_OK)
+	{
+		for (DWORD i = 0; i < numDevices; i++)
+		{
+			FTDIDeviceInfo info;
+			info.serial = String(devInfo[i].SerialNumber);
+			info.name = String(devInfo[i].Description);
+			info.id = i;
+
+			DBG("FTDI: Found device index:" + String((int)i)
+				+ " serial:" + info.serial
+				+ " name:" + info.name);
+
+			result.add(info);
+		}
+	}
+
+	delete[] devInfo;
+	return result;
+}
+
+bool DMXOpenUSBFTDIDevice::openDevice(int deviceIndex)
+{
+	if (isOpen)
+		closeDevice();
+
+	FT_STATUS status = FT_Open(deviceIndex, &handle);
+	if (status != FT_OK)
+	{
+		LOGWARNING("FTDI: Could not open device index " + String(deviceIndex) + " (status: " + String((int)status) + ")");
+		return false;
+	}
+
+	if (FT_GetLatencyTimer(handle, &defaultLatency) != FT_OK)
+	{
+		DBG("FTDI: Could not query default latency, using 16ms");
+		defaultLatency = 16;
+	}
+
+	if (FT_ResetDevice(handle) != FT_OK)
+	{
+		LOGWARNING("FTDI: Reset failed");
+		FT_Close(handle);
+		handle = NULL;
+		return false;
+	}
+
+	if (FT_SetBaudRate(handle, 250000) != FT_OK)
+	{
+		LOGWARNING("FTDI: Set baud rate failed");
+		FT_Close(handle);
+		handle = NULL;
+		return false;
+	}
+
+	if (FT_SetDataCharacteristics(handle, FT_BITS_8, FT_STOP_BITS_2, FT_PARITY_NONE) != FT_OK)
+	{
+		LOGWARNING("FTDI: Set data characteristics failed");
+		FT_Close(handle);
+		handle = NULL;
+		return false;
+	}
+
+	if (FT_SetFlowControl(handle, FT_FLOW_NONE, 0, 0) != FT_OK)
+	{
+		LOGWARNING("FTDI: Set flow control failed");
+		FT_Close(handle);
+		handle = NULL;
+		return false;
+	}
+
+	if (FT_SetLatencyTimer(handle, 1) != FT_OK)
+	{
+		DBG("FTDI: Could not set low latency, using default");
+	}
+
+	if (FT_ClrRts(handle) != FT_OK)
+	{
+		DBG("FTDI: Could not clear RTS");
+	}
+
+	if (FT_Purge(handle, FT_PURGE_RX | FT_PURGE_TX) != FT_OK)
+	{
+		DBG("FTDI: Could not purge buffers");
+	}
+
+	isOpen = true;
+	selectedDeviceIndex = deviceIndex;
+	NLOG(niceName, "FTDI device opened (index " + String(deviceIndex) + ")");
+	setConnected(true);
+	return true;
+}
+
+void DMXOpenUSBFTDIDevice::closeDevice()
+{
+	if (!isOpen)
+		return;
+
+	FT_SetLatencyTimer(handle, defaultLatency);
+	FT_Close(handle);
+	handle = NULL;
+	isOpen = false;
+	setConnected(false);
+	NLOG(niceName, "FTDI device closed");
+}
+
+void DMXOpenUSBFTDIDevice::sendDMXValuesInternal()
+{
+	if (!isOpen)
+		return;
+
+	// DMX Break signal (~1ms, Windows Sleep minimum)
+	if (FT_SetBreakOn(handle) != FT_OK)
+	{
+		DBG("FTDI: Break ON failed");
+		return;
+	}
+
+	Sleep(1);
+
+	// Mark-After-Break
+	if (FT_SetBreakOff(handle) != FT_OK)
+	{
+		DBG("FTDI: Break OFF failed");
+		return;
+	}
+
+	Sleep(1);
+
+	// Send start code (0x00) + 512 DMX channels
+	uint8 dmxFrame[513];
+	dmxFrame[0] = 0x00;
+	memcpy(dmxFrame + 1, dmxDataOut, 512);
+
+	DWORD written = 0;
+	if (FT_Write(handle, dmxFrame, 513, &written) != FT_OK)
+	{
+		DBG("FTDI: Write failed");
+	}
+}
+
+void DMXOpenUSBFTDIDevice::onContainerParameterChanged(Parameter* p)
+{
+	DMXDevice::onContainerParameterChanged(p);
+
+	if (p == deviceSelector)
+	{
+		int selectedIndex = (int)deviceSelector->getValueData();
+
+		if (selectedIndex < 0)
+		{
+			closeDevice();
+		}
+		else
+		{
+			openDevice(selectedIndex);
+		}
+	}
+}
+
 #else
 
 // Stub implementation for unsupported platforms
