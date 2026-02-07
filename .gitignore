@@ -7,3 +7,9 @@ Builds/*/x64
 .DS_Store
 Builds/MacOSX_CI/build/
 xcuserdata/
+Release/
+
+.claude/
+.vscode/
+
+JUCE/
