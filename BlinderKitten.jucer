@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="e7FbaJ" name="BlinderKitten" projectType="guiapp" useAppConfig="1"
               addUsingNamespaceToJuceHeader="1" displaySplashScreen="0" jucerFormatVersion="1"
-              compilerFlagSchemes="NewScheme" headerPath="../../Source&#10;../../Source/Definitions&#10;../../External/serial/include&#10;../../External/servus/include&#10;../../External/dnssd/include&#10;../../External/ois/include&#10;../../External/sdl/include&#10;../../External/libusb/include/libusb-1.0&#10;../../External/NDI/include&#10;/usr/local/include/libftdi1&#10;/usr/local/include/libusb-1.0"
+              compilerFlagSchemes="NewScheme" headerPath="../../Source&#10;../../Source/Definitions&#10;../../External/serial/include&#10;../../External/servus/include&#10;../../External/dnssd/include&#10;../../External/ois/include&#10;../../External/sdl/include&#10;../../External/libusb/include/libusb-1.0&#10;../../External/NDI/include&#10;../../External/libftdi/include/libftdi1"
               defines="JUCE_MODAL_LOOPS_PERMITTED=1&#10;_ITERATOR_DEBUG_LEVEL=1&#10;ORGANICUI_USE_WEBBROWSER=0"
               version="1.0.1b97" companyName="Norbert Rostaing" companyCopyright="Norbert Rostaing"
               companyWebsite="http://blinderkitten.lighting" companyEmail="blinderkitten@gmail.com"

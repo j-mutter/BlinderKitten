@@ -45,10 +45,10 @@ public:
 	static Array<FTDIDeviceInfo> enumerateDevices();
 
 private:
-	struct ftdi_context m_ftdi;
-	bool m_isOpen;
-	String m_selectedSerial;
-	unsigned char m_defaultLatency;
+	struct ftdi_context ftdi;
+	bool isOpen;
+	String selectedSerial;
+	unsigned char defaultLatency;
 
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DMXOpenUSBFTDIDevice)
 };
