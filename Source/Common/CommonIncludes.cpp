@@ -35,6 +35,7 @@
 #include "DMX/device/DMXOpenUSBDevice.cpp"
 #include "DMX/device/DMXEuroliteDevice.cpp"
 #include "DMX/device/DMXSACNDevice.cpp"
+#include "DMX/device/DMXOpenUSBFTDIDevice.cpp"
 #include "DMX/DMXManager.cpp"
 
 #include "Helpers/SceneHelpers.cpp"
