@@ -140,6 +140,10 @@ DMXDevice* DMXDevice::create(Type type)
 		return new DMXKingDevice();
 		break;
 
+	case OPENDMX_FTDI:
+		return new DMXOpenUSBFTDIDevice();
+		break;
+
 	default:
 		DBG("Not handled");
 		break;

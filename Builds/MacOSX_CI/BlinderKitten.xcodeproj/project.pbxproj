@@ -86,6 +86,7 @@
 		55FBE1D3E050E1F0F9245621 /* Icon.icns */ = {isa = PBXBuildFile; fileRef = 70EEC5AF7380F82A5D461BE8; };
 		59C558FC9BC8AD427ED3F2EB /* Multiplicator.cpp */ = {isa = PBXBuildFile; fileRef = 7C663D18D81B15BA87D0FA15; };
 		5DF8C9534D05F737617C5F26 /* include_juce_gui_basics.mm */ = {isa = PBXBuildFile; fileRef = FCB437877944C63C32C2154C; };
+		5E34338147AC42881E831D5A /* DMXOpenUSBFTDIDevice.cpp */ = {isa = PBXBuildFile; fileRef = 739A3210D3DDF06EEDC44A4D; };
 		60F711127BABE4B8A9FD157E /* InterfaceAction.cpp */ = {isa = PBXBuildFile; fileRef = 17CD59F07AAF0B1D28008686; };
 		641F5F33C99790746DE9DD0E /* DataTransferManager.cpp */ = {isa = PBXBuildFile; fileRef = 0F27EF75B60D8C63BBCA2A70; };
 		649506E188A23DF20256424C /* ChannelFamilyManagerUI.cpp */ = {isa = PBXBuildFile; fileRef = E0A18BBC03E9615B6466272E; };
@@ -443,6 +444,7 @@
 		71BA9BB2DF123B273E9F2C14 /* GroupManager.cpp */ /* GroupManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = GroupManager.cpp; path = ../../Source/Definitions/Group/GroupManager.cpp; sourceTree = SOURCE_ROOT; };
 		7277EF38C546554465660410 /* MIDIMapping.cpp */ /* MIDIMapping.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MIDIMapping.cpp; path = ../../Source/Definitions/Interface/interfaces/midi/MIDIMapping.cpp; sourceTree = SOURCE_ROOT; };
 		730739037940A2973797AA62 /* DMXMapping.h */ /* DMXMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMXMapping.h; path = ../../Source/Definitions/Interface/interfaces/dmx/DMXMapping.h; sourceTree = SOURCE_ROOT; };
+		739A3210D3DDF06EEDC44A4D /* DMXOpenUSBFTDIDevice.cpp */ /* DMXOpenUSBFTDIDevice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DMXOpenUSBFTDIDevice.cpp; path = ../../Source/Common/DMX/device/DMXOpenUSBFTDIDevice.cpp; sourceTree = SOURCE_ROOT; };
 		73F9DFB3556EDCD24CEEFE6A /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
 		73FD31CA836E9A090215E22E /* TrackerAction.h */ /* TrackerAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TrackerAction.h; path = ../../Source/Definitions/Actions/TrackerAction.h; sourceTree = SOURCE_ROOT; };
 		7443C228FD8855FA3BA8E1E5 /* VirtualFaderButton.h */ /* VirtualFaderButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VirtualFaderButton.h; path = ../../Source/UI/VirtualFaders/VirtualFaderButton.h; sourceTree = SOURCE_ROOT; };
@@ -646,6 +648,7 @@
 		DD54EEB4980A62663DB01445 /* juce_audio_processors */ /* juce_audio_processors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_processors; path = ../../JUCE/modules/juce_audio_processors; sourceTree = SOURCE_ROOT; };
 		DEB09578F39DDBA089B7E0DA /* TimingPresetManagerUI.cpp */ /* TimingPresetManagerUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TimingPresetManagerUI.cpp; path = ../../Source/Definitions/TimingPreset/TimingPresetManagerUI.cpp; sourceTree = SOURCE_ROOT; };
 		DF4333E5CEE6FFB50BB985B5 /* VirtualFaderColManager.h */ /* VirtualFaderColManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VirtualFaderColManager.h; path = ../../Source/UI/VirtualFaders/VirtualFaderColManager.h; sourceTree = SOURCE_ROOT; };
+		DF71342DAC757DF17FF68369 /* DMXOpenUSBFTDIDevice.h */ /* DMXOpenUSBFTDIDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMXOpenUSBFTDIDevice.h; path = ../../Source/Common/DMX/device/DMXOpenUSBFTDIDevice.h; sourceTree = SOURCE_ROOT; };
 		DF789C6283F2EBC8447161AF /* BundleSelectionManager.h */ /* BundleSelectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BundleSelectionManager.h; path = ../../Source/Definitions/Bundle/BundleSelectionManager.h; sourceTree = SOURCE_ROOT; };
 		DFD6F18C4D7FE86A84FD3F12 /* MapperGridView.h */ /* MapperGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MapperGridView.h; path = ../../Source/UI/GridView/MapperGridView.h; sourceTree = SOURCE_ROOT; };
 		DFEFA0DA91C8F0A958712C6A /* Brain.h */ /* Brain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Brain.h; path = ../../Source/Brain.h; sourceTree = SOURCE_ROOT; };
@@ -1620,6 +1623,8 @@
 				49482E859F6AF960EF1DEFB4,
 				014EDAA820EA34A7242D76BE,
 				57341F98A54F5BBA7EC89B3F,
+				739A3210D3DDF06EEDC44A4D,
+				DF71342DAC757DF17FF68369,
 				EF50EF232AF85F4CF4CEC49C,
 				1DE907365AFC7D25708998B3,
 				9F22787BBBDFC2967B992A26,
@@ -1945,6 +1950,7 @@
 				C4CB15121D17654C6E091FA7,
 				A2463FB3BF5DFDBD5FF69435,
 				0E3AF8AF0B0F9924A362F52A,
+				5E34338147AC42881E831D5A,
 				6F79BE3F94B03AA855A176F3,
 				EA7F96E3F55C9548B94EB629,
 				D174FA18D7670C20B1BFAC90,
@@ -2199,6 +2205,8 @@
 					"$(SRCROOT)/../../External/ois/include",
 					"$(SRCROOT)/../../External/sdl/include",
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
+					"/usr/local/include/libftdi1",
+					"/usr/local/include/libusb-1.0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2207,12 +2215,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"../../External/servus/lib/osx/${CURRENT_ARCH}/debug\"",
+					"\"/usr/local/lib\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0";
-				OTHER_LDFLAGS = "-lServus -lssl -lcrypto -lz";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 /usr/local/include/libftdi1 /usr/local/include/libusb-1.0";
+				OTHER_LDFLAGS = "-lServus -lftdi1 -lusb-1.0 -lssl -lcrypto -lz";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
 				USE_HEADERMAP = NO;
@@ -2268,6 +2277,8 @@
 					"$(SRCROOT)/../../External/ois/include",
 					"$(SRCROOT)/../../External/sdl/include",
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
+					"/usr/local/include/libftdi1",
+					"/usr/local/include/libusb-1.0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2276,13 +2287,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"../../External/servus/lib/osx/${CURRENT_ARCH}/release\"",
+					"\"/usr/local/lib\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0";
-				OTHER_LDFLAGS = "-lServus -lssl -lcrypto -lz";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 /usr/local/include/libftdi1 /usr/local/include/libusb-1.0";
+				OTHER_LDFLAGS = "-lServus -lftdi1 -lusb-1.0 -lssl -lcrypto -lz";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
 				USE_HEADERMAP = NO;
@@ -2338,6 +2350,8 @@
 					"$(SRCROOT)/../../External/ois/include",
 					"$(SRCROOT)/../../External/sdl/include",
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
+					"/usr/local/include/libftdi1",
+					"/usr/local/include/libusb-1.0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2346,13 +2360,14 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"../../External/servus/lib/osx/${CURRENT_ARCH}/release\"",
+					"\"/usr/local/lib\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0";
-				OTHER_LDFLAGS = "-lServus -lssl -lcrypto -lz";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 /usr/local/include/libftdi1 /usr/local/include/libusb-1.0";
+				OTHER_LDFLAGS = "-lServus -lftdi1 -lusb-1.0 -lssl -lcrypto -lz";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
 				USE_HEADERMAP = NO;

@@ -106,6 +106,7 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/InputPanel_276fbbd6.o \
   $(JUCE_OBJDIR)/LabelAndTime_69a3566c.o \
   $(JUCE_OBJDIR)/LayoutViewer_b08c5698.o \
+  $(JUCE_OBJDIR)/DMXOpenUSBFTDIDevice_4d1b7f12.o \
   $(JUCE_OBJDIR)/list_ports_linux_203b2613.o \
   $(JUCE_OBJDIR)/list_ports_osx_d93ade33.o \
   $(JUCE_OBJDIR)/list_ports_win_e6502c6b.o \
@@ -443,6 +444,11 @@ $(JUCE_OBJDIR)/LabelAndTime_69a3566c.o: ../../Source/UI/LabelAndTime.cpp
 $(JUCE_OBJDIR)/LayoutViewer_b08c5698.o: ../../Source/UI/LayoutViewer.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling LayoutViewer.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/DMXOpenUSBFTDIDevice_4d1b7f12.o: ../../Source/Common/DMX/device/DMXOpenUSBFTDIDevice.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling DMXOpenUSBFTDIDevice.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/list_ports_linux_203b2613.o: ../../Source/Common/Serial/lib/serial/impl/list_ports/list_ports_linux.cc
