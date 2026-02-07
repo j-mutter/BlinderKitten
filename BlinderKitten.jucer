@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="e7FbaJ" name="BlinderKitten" projectType="guiapp" useAppConfig="1"
               addUsingNamespaceToJuceHeader="1" displaySplashScreen="0" jucerFormatVersion="1"
-              compilerFlagSchemes="NewScheme" headerPath="../../Source&#10;../../Source/Definitions&#10;../../External/serial/include&#10;../../External/servus/include&#10;../../External/dnssd/include&#10;../../External/ois/include&#10;../../External/sdl/include&#10;../../External/libusb/include/libusb-1.0&#10;/usr/local/include/libftdi1&#10;/usr/local/include/libusb-1.0"
+              compilerFlagSchemes="NewScheme" headerPath="../../Source&#10;../../Source/Definitions&#10;../../External/serial/include&#10;../../External/servus/include&#10;../../External/dnssd/include&#10;../../External/ois/include&#10;../../External/sdl/include&#10;../../External/libusb/include/libusb-1.0&#10;../../External/libftdi/include/libftdi1"
               defines="JUCE_MODAL_LOOPS_PERMITTED=1&#10;_ITERATOR_DEBUG_LEVEL=1&#10;"
               version="1.0.1b93" companyName="Norbert Rostaing" companyCopyright="Norbert Rostaing"
               companyWebsite="http://blinderkitten.lighting" companyEmail="blinderkitten@gmail.com"
@@ -211,7 +211,7 @@
                   file="Source/Common/DMX/device/DMXOpenUSBDevice.cpp"/>
             <FILE id="WuC6ul" name="DMXOpenUSBDevice.h" compile="0" resource="0"
                   file="Source/Common/DMX/device/DMXOpenUSBDevice.h"/>
-            <FILE id="w9MfJH" name="DMXOpenUSBFTDIDevice.cpp" compile="1" resource="0"
+            <FILE id="w9MfJH" name="DMXOpenUSBFTDIDevice.cpp" compile="0" resource="0"
                   file="Source/Common/DMX/device/DMXOpenUSBFTDIDevice.cpp"/>
             <FILE id="hkpbWS" name="DMXOpenUSBFTDIDevice.h" compile="0" resource="0"
                   file="Source/Common/DMX/device/DMXOpenUSBFTDIDevice.h"/>
@@ -962,13 +962,13 @@
                extraFrameworks="IOBluetooth, ForceFeedback, IOKit" hardenedRuntimeOptions="com.apple.security.cs.allow-jit"
                hardenedRuntime="0">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" libraryPath="../../External/servus/lib/osx/${CURRENT_ARCH}/debug&#10;/usr/local/lib"/>
-        <CONFIGURATION isDebug="0" name="Release" libraryPath="../../External/servus/lib/osx/${CURRENT_ARCH}/release&#10;/usr/local/lib"
+        <CONFIGURATION isDebug="1" name="Debug" libraryPath="../../External/servus/lib/osx/${CURRENT_ARCH}/debug&#10;../../External/libftdi/lib/osx/${CURRENT_ARCH}&#10;../../External/libusb/lib/osx/${CURRENT_ARCH}"/>
+        <CONFIGURATION isDebug="0" name="Release" libraryPath="../../External/servus/lib/osx/${CURRENT_ARCH}/release&#10;../../External/libftdi/lib/osx/${CURRENT_ARCH}&#10;../../External/libusb/lib/osx/${CURRENT_ARCH}"
                        osxCompatibility="10.10 SDK" targetName="BlinderKitten" binaryPath="Release"
                        defines="JUCE_DISABLE_ASSERTIONS=1&#10;JUCE_SILENCE_XCODE_15_LINKER_WARNING=1"
                        macOSDeploymentTarget="10.10"/>
         <CONFIGURATION isDebug="0" name="ReleaseSilicon" targetName="BlinderKitten"
-                       libraryPath="../../External/servus/lib/osx/${CURRENT_ARCH}/release&#10;/usr/local/lib"
+                       libraryPath="../../External/servus/lib/osx/${CURRENT_ARCH}/release&#10;../../External/libftdi/lib/osx/${CURRENT_ARCH}&#10;../../External/libusb/lib/osx/${CURRENT_ARCH}"
                        optimisation="3" binaryPath="Release" defines="JUCE_DISABLE_ASSERTIONS=1&#10;JUCE_SILENCE_XCODE_15_LINKER_WARNING=1"
                        osxCompatibility="10.10 SDK" macOSDeploymentTarget="10.10"/>
       </CONFIGURATIONS>
