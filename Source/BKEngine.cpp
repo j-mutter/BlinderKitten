@@ -122,8 +122,8 @@ BKEngine::BKEngine() :
 
 	ProjectSettings::getInstance()->addChildControllableContainer(&genericSettingsContainer);
 	ProjectSettings::getInstance()->addChildControllableContainer(&conductorInfosContainer);
-	GlobalSettings::getInstance()->addChildControllableContainer(&colorPickerContainer);
-	GlobalSettings::getInstance()->addChildControllableContainer(&trackerContainer);
+	ProjectSettings::getInstance()->addChildControllableContainer(&colorPickerContainer);
+	ProjectSettings::getInstance()->addChildControllableContainer(&trackerContainer);
 	ProjectSettings::getInstance()->addChildControllableContainer(&virtualParamsContainer);
 	ProjectSettings::getInstance()->addChildControllableContainer(&uiParamsContainer);
 	ProjectSettings::getInstance()->addChildControllableContainer(&loadWindowContainer);
