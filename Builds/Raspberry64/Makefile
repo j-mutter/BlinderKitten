@@ -39,7 +39,7 @@ ifeq ($(CONFIG),Debug)
     TARGET_ARCH := 
   endif
 
-  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DDEBUG=1" "-D_DEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DLINK_PLATFORM_LINUX=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b92" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags $(shell ($(PKG_CONFIG) --exists webkit2gtk-4.1 && echo webkit2gtk-4.1) || echo webkit2gtk-4.0) alsa freetype2 gl libcurl gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I/usr/local/include/libftdi1 -I/usr/local/include/libusb-1.0 $(CPPFLAGS)
+  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DDEBUG=1" "-D_DEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DLINK_PLATFORM_LINUX=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b92" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags $(shell ($(PKG_CONFIG) --exists webkit2gtk-4.1 && echo webkit2gtk-4.1) || echo webkit2gtk-4.0) alsa freetype2 gl libcurl gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I../../External/libftdi/include/libftdi1 $(CPPFLAGS)
   JUCE_CPPFLAGS_APP :=  "-DJucePlugin_Build_VST=0" "-DJucePlugin_Build_VST3=0" "-DJucePlugin_Build_AU=0" "-DJucePlugin_Build_AUv3=0" "-DJucePlugin_Build_AAX=0" "-DJucePlugin_Build_Standalone=0" "-DJucePlugin_Build_Unity=0" "-DJucePlugin_Build_LV2=0"
   JUCE_TARGET_APP := BlinderKitten
 
@@ -60,7 +60,7 @@ ifeq ($(CONFIG),Release)
     TARGET_ARCH := 
   endif
 
-  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DNDEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DLINK_PLATFORM_LINUX=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b92" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags $(shell ($(PKG_CONFIG) --exists webkit2gtk-4.1 && echo webkit2gtk-4.1) || echo webkit2gtk-4.0) alsa freetype2 gl libcurl gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I/usr/include/freetype2 -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I/usr/local/include/libftdi1 -I/usr/local/include/libusb-1.0 $(CPPFLAGS)
+  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DNDEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DLINK_PLATFORM_LINUX=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b92" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags $(shell ($(PKG_CONFIG) --exists webkit2gtk-4.1 && echo webkit2gtk-4.1) || echo webkit2gtk-4.0) alsa freetype2 gl libcurl gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I/usr/include/freetype2 -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I../../External/libftdi/include/libftdi1 $(CPPFLAGS)
   JUCE_CPPFLAGS_APP :=  "-DJucePlugin_Build_VST=0" "-DJucePlugin_Build_VST3=0" "-DJucePlugin_Build_AU=0" "-DJucePlugin_Build_AUv3=0" "-DJucePlugin_Build_AAX=0" "-DJucePlugin_Build_Standalone=0" "-DJucePlugin_Build_Unity=0" "-DJucePlugin_Build_LV2=0"
   JUCE_TARGET_APP := BlinderKitten
 
@@ -106,7 +106,6 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/InputPanel_276fbbd6.o \
   $(JUCE_OBJDIR)/LabelAndTime_69a3566c.o \
   $(JUCE_OBJDIR)/LayoutViewer_b08c5698.o \
-  $(JUCE_OBJDIR)/DMXOpenUSBFTDIDevice_4d1b7f12.o \
   $(JUCE_OBJDIR)/list_ports_linux_203b2613.o \
   $(JUCE_OBJDIR)/list_ports_osx_d93ade33.o \
   $(JUCE_OBJDIR)/list_ports_win_e6502c6b.o \
@@ -444,11 +443,6 @@ $(JUCE_OBJDIR)/LabelAndTime_69a3566c.o: ../../Source/UI/LabelAndTime.cpp
 $(JUCE_OBJDIR)/LayoutViewer_b08c5698.o: ../../Source/UI/LayoutViewer.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling LayoutViewer.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
-$(JUCE_OBJDIR)/DMXOpenUSBFTDIDevice_4d1b7f12.o: ../../Source/Common/DMX/device/DMXOpenUSBFTDIDevice.cpp
-	-$(V_AT)mkdir -p $(@D)
-	@echo "Compiling DMXOpenUSBFTDIDevice.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/list_ports_linux_203b2613.o: ../../Source/Common/Serial/lib/serial/impl/list_ports/list_ports_linux.cc
