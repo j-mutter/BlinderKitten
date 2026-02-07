@@ -10,10 +10,6 @@
 
 #pragma once
 
-#if JUCE_MAC || JUCE_LINUX
-
-#include <ftdi.h>
-
 struct FTDIDeviceInfo
 {
 	String serial;
@@ -21,7 +17,12 @@ struct FTDIDeviceInfo
 	String vendor;
 	uint16 vid;
 	uint16 pid;
+	uint32 id;
 };
+
+#if JUCE_MAC || JUCE_LINUX
+
+#include <ftdi.h>
 
 class DMXOpenUSBFTDIDevice : public DMXDevice
 {
@@ -53,9 +54,39 @@ private:
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DMXOpenUSBFTDIDevice)
 };
 
+#elif JUCE_WINDOWS
+
+#include <ftd2xx.h>
+
+class DMXOpenUSBFTDIDevice : public DMXDevice
+{
+public:
+	DMXOpenUSBFTDIDevice();
+	~DMXOpenUSBFTDIDevice();
+
+	EnumParameter* deviceSelector;
+
+	void sendDMXValuesInternal() override;
+	void onContainerParameterChanged(Parameter* p) override;
+
+	void refreshDeviceList();
+	bool openDevice(int deviceIndex);
+	void closeDevice();
+
+	static Array<FTDIDeviceInfo> enumerateDevices();
+
+private:
+	FT_HANDLE handle;
+	bool isOpen;
+	int selectedDeviceIndex;
+	unsigned char defaultLatency;
+
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(DMXOpenUSBFTDIDevice)
+};
+
 #else
 
-// Stub for platforms without libftdi support
+// Stub for unsupported platforms
 class DMXOpenUSBFTDIDevice : public DMXDevice
 {
 public:
