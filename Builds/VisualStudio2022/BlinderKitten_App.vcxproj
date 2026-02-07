@@ -47,14 +47,14 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\App\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">BlinderKitten</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LibraryPath);../../External/servus/lib/win/x64/debug;../../External/dnssd/lib;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MDd</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(LibraryPath);../../External/servus/lib/win/x64/debug;../../External/dnssd/lib;../../External/ftd2xx/amd64;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MDd</LibraryPath>
     <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</PreBuildEventUseInBuild>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</PostBuildEventUseInBuild>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\..\..\Binaries\App\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\App\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">BlinderKitten</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LibraryPath);../../External/servus/lib/win/x64/release;../../External/dnssd/lib;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MD</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(LibraryPath);../../External/servus/lib/win/x64/release;../../External/dnssd/lib;../../External/ftd2xx/amd64;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MD</LibraryPath>
     <PreBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PreBuildEventUseInBuild>
     <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PostBuildEventUseInBuild>
   </PropertyGroup>
@@ -69,7 +69,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;../../External/ftd2xx;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DEBUG;_DEBUG;JUCE_MODAL_LOOPS_PERMITTED=1;_ITERATOR_DEBUG_LEVEL=1;JUCE_DISABLE_ASSERTIONS=1;JUCER_VS2022_78A503E=1;JUCE_APP_VERSION=1.0.1b92;JUCE_APP_VERSION_HEX=0x10001;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_LV2=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -84,7 +84,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;../../External/ftd2xx;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;DEBUG;_DEBUG;JUCE_MODAL_LOOPS_PERMITTED=1;_ITERATOR_DEBUG_LEVEL=1;JUCE_DISABLE_ASSERTIONS=1;JUCER_VS2022_78A503E=1;JUCE_APP_VERSION=1.0.1b92;JUCE_APP_VERSION_HEX=0x10001;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_LV2=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Link>
@@ -94,17 +94,17 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(IntDir)\BlinderKitten.pdb</ProgramDatabaseFile>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/debug;../../External/dnssd/lib;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MDd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/debug;../../External/dnssd/lib;../../External/ftd2xx/amd64;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MDd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LargeAddressAware>true</LargeAddressAware>
-      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;ftd2xx.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>$(IntDir)\BlinderKitten.bsc</OutputFile>
     </Bscmake>
     <Lib>
-      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/debug;../../External/dnssd/lib;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MDd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;ftd2xx.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/debug;../../External/dnssd/lib;../../External/ftd2xx/amd64;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MDd;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -118,7 +118,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;../../External/ftd2xx;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;NDEBUG;JUCE_MODAL_LOOPS_PERMITTED=1;_ITERATOR_DEBUG_LEVEL=1;JUCE_DISABLE_ASSERTIONS=1;JUCER_VS2022_78A503E=1;JUCE_APP_VERSION=1.0.1b92;JUCE_APP_VERSION_HEX=0x10001;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_LV2=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
@@ -133,7 +133,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\JuceLibraryCode;C:\repos\JUCE\modules;..\..\..\JUCE\modules;..\..\Modules;../../External/serial/include;../../External/asio;../../External/servus/include;../../External/dnssd/include;../../Source;../../Source/Definitions;../../External/serial/include;../../External/servus/include;../../External/dnssd/include;../../External/ois/include;../../External/sdl/include;../../External/libusb/include/libusb-1.0;../../External/libftdi/include/libftdi1;../../External/ftd2xx;/usr/include/libftdi1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_WINDOWS;NDEBUG;JUCE_MODAL_LOOPS_PERMITTED=1;_ITERATOR_DEBUG_LEVEL=1;JUCE_DISABLE_ASSERTIONS=1;JUCER_VS2022_78A503E=1;JUCE_APP_VERSION=1.0.1b92;JUCE_APP_VERSION_HEX=0x10001;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=0;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_LV2=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <Link>
@@ -145,18 +145,18 @@
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/release;../../External/dnssd/lib;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MD;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/release;../../External/dnssd/lib;../../External/ftd2xx/amd64;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MD;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <LargeAddressAware>true</LargeAddressAware>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;ftd2xx.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <OutputFile>$(IntDir)\BlinderKitten.bsc</OutputFile>
     </Bscmake>
     <Lib>
-      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/release;../../External/dnssd/lib;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MD;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Setupapi.lib;Servus.lib;dnssd.lib;ftd2xx.lib;libssl.lib;libcrypto.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../External/servus/lib/win/x64/release;../../External/dnssd/lib;../../External/ftd2xx/amd64;..\..\Modules\juce_simpleweb\libs\VisualStudio2022\$(Platform)\MD;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

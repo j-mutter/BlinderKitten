@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="e7FbaJ" name="BlinderKitten" projectType="guiapp" useAppConfig="1"
               addUsingNamespaceToJuceHeader="1" displaySplashScreen="0" jucerFormatVersion="1"
-              compilerFlagSchemes="NewScheme" headerPath="../../Source&#10;../../Source/Definitions&#10;../../External/serial/include&#10;../../External/servus/include&#10;../../External/dnssd/include&#10;../../External/ois/include&#10;../../External/sdl/include&#10;../../External/libusb/include/libusb-1.0&#10;../../External/libftdi/include/libftdi1&#10;/usr/include/libftdi1"
+              compilerFlagSchemes="NewScheme" headerPath="../../Source&#10;../../Source/Definitions&#10;../../External/serial/include&#10;../../External/servus/include&#10;../../External/dnssd/include&#10;../../External/ois/include&#10;../../External/sdl/include&#10;../../External/libusb/include/libusb-1.0&#10;../../External/libftdi/include/libftdi1&#10;../../External/ftd2xx&#10;/usr/include/libftdi1"
               defines="JUCE_MODAL_LOOPS_PERMITTED=1&#10;_ITERATOR_DEBUG_LEVEL=1&#10;"
               version="1.0.1b92" companyName="Norbert Rostaing" companyCopyright="Norbert Rostaing"
               companyWebsite="http://blinderkitten.lighting" companyEmail="blinderkitten@gmail.com"
@@ -866,14 +866,14 @@
                ORGANICUI_USE_WEBSERVER="1" JUCE_IP_AND_PORT_DETECTION="1" JUCE_EXCLUSIVE_BINDING_BY_DEFAULT="1"
                JUCE_ENABLE_BROADCAST_BY_DEFAULT="1" JUCE_ALLOW_SPECIAL_CHARS_IN_ADDRESS="1"/>
   <EXPORTFORMATS>
-    <VS2019 targetFolder="Builds/VisualStudio2019" externalLibraries="Setupapi.lib&#10;Servus.lib&#10;dnssd.lib"
+    <VS2019 targetFolder="Builds/VisualStudio2019" externalLibraries="Setupapi.lib&#10;Servus.lib&#10;dnssd.lib&#10;ftd2xx.lib"
             smallIcon="qTJiMk" bigIcon="qTJiMk">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="BlinderKitten" binaryPath="Binaries/Debug"
                        headerPath="../../External/serial/include&#10;../../External/asio&#10;../../External/servus/include&#10;../../External/dnssd/include"
-                       libraryPath="../../External/servus/lib/win/x64/debug&#10;../../External/dnssd/lib"
+                       libraryPath="../../External/servus/lib/win/x64/debug&#10;../../External/dnssd/lib&#10;../../External/ftd2xx/amd64"
                        defines="JUCE_DISABLE_ASSERTIONS=1"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="BlinderKitten" libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib"
+        <CONFIGURATION isDebug="0" name="Release" targetName="BlinderKitten" libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib&#10;../../External/ftd2xx/amd64"
                        headerPath="../../External/serial/include&#10;../../External/asio&#10;../../External/servus/include&#10;../../External/dnssd/include"
                        binaryPath="Binaries/" defines="JUCE_DISABLE_ASSERTIONS=1"/>
       </CONFIGURATIONS>
@@ -897,14 +897,14 @@
       </MODULEPATHS>
     </VS2019>
     <VS2022 targetFolder="Builds/VisualStudio2022" smallIcon="qTJiMk" bigIcon="qTJiMk"
-            externalLibraries="Setupapi.lib&#10;Servus.lib&#10;dnssd.lib"
+            externalLibraries="Setupapi.lib&#10;Servus.lib&#10;dnssd.lib&#10;ftd2xx.lib"
             extraCompilerFlags="/bigobj ">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" headerPath="../../External/serial/include&#10;../../External/asio&#10;../../External/servus/include&#10;../../External/dnssd/include"
-                       binaryPath="Binaries/Debug" libraryPath="../../External/servus/lib/win/x64/debug&#10;../../External/dnssd/lib"
+                       binaryPath="Binaries/Debug" libraryPath="../../External/servus/lib/win/x64/debug&#10;../../External/dnssd/lib&#10;../../External/ftd2xx/amd64"
                        defines="JUCE_DISABLE_ASSERTIONS=1"/>
         <CONFIGURATION isDebug="0" name="Release" headerPath="../../External/serial/include&#10;../../External/asio&#10;../../External/servus/include&#10;../../External/dnssd/include"
-                       binaryPath="Binaries/" libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib"
+                       binaryPath="Binaries/" libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib&#10;../../External/ftd2xx/amd64"
                        defines="JUCE_DISABLE_ASSERTIONS=1" alwaysGenerateDebugSymbols="1"
                        debugInformationFormat="ProgramDatabase"/>
       </CONFIGURATIONS>
@@ -927,12 +927,12 @@
         <MODULEPATH id="juce_simpleweb" path="Modules"/>
       </MODULEPATHS>
     </VS2022>
-    <VS2022 targetFolder="Builds/VisualStudio2022_CI" externalLibraries="Setupapi.lib&#10;Servus.lib&#10;dnssd.lib"
+    <VS2022 targetFolder="Builds/VisualStudio2022_CI" externalLibraries="Setupapi.lib&#10;Servus.lib&#10;dnssd.lib&#10;ftd2xx.lib"
             smallIcon="qTJiMk" bigIcon="qTJiMk">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
         <CONFIGURATION isDebug="0" name="Release" binaryPath="Binaries/CI" headerPath="../../External/serial/include&#10;../../External/asio&#10;../../External/servus/include&#10;../../External/dnssd/include"
-                       libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib"
+                       libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib&#10;../../External/ftd2xx/amd64"
                        defines="JUCE_DISABLE_ASSERTIONS=1" winArchitecture="x64" alwaysGenerateDebugSymbols="1"
                        debugInformationFormat="ProgramDatabase"/>
       </CONFIGURATIONS>
@@ -1078,11 +1078,11 @@
       </MODULEPATHS>
     </LINUX_MAKE>
     <VS2022 targetFolder="Builds/VisualStudio2022_Win7CI" extraCompilerFlags="/Zm1000 /bigobj"
-            extraLinkerFlags="/HEAP:0x400000,0x10000" externalLibraries="Setupapi.lib&#10;hid.lib&#10;Servus.lib&#10;dnssd.lib&#10;iphlpapi.lib&#10;hid.lib&#10;hidapi_static.lib"
+            extraLinkerFlags="/HEAP:0x400000,0x10000" externalLibraries="Setupapi.lib&#10;hid.lib&#10;Servus.lib&#10;dnssd.lib&#10;iphlpapi.lib&#10;hid.lib&#10;hidapi_static.lib&#10;ftd2xx.lib"
             smallIcon="qTJiMk" bigIcon="qTJiMk">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug"/>
-        <CONFIGURATION isDebug="0" name="Release" binaryPath="Binaries/CI" libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib&#10;../../External/hidapi/lib/win/x64&#10;"
+        <CONFIGURATION isDebug="0" name="Release" binaryPath="Binaries/CI" libraryPath="../../External/servus/lib/win/x64/release&#10;../../External/dnssd/lib&#10;../../External/hidapi/lib/win/x64&#10;../../External/ftd2xx/amd64"
                        defines="JUCE_DISABLE_ASSERTIONS=1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
