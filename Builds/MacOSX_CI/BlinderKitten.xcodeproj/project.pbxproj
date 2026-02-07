@@ -2310,6 +2310,8 @@
 					"$(SRCROOT)/../../External/sdl/include",
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
 					"$(SRCROOT)/../../External/NDI/include",
+					"/usr/local/include/libftdi1",
+					"/usr/local/include/libusb-1.0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2319,12 +2321,13 @@
 					"$(inherited)",
 					"\"../../External/servus/lib/osx/${CURRENT_ARCH}/debug\"",
 					"\"../../External/NDI/lib/osx\"",
+					"\"/usr/local/lib\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include";
-				OTHER_LDFLAGS = "-lServus -lndi -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include /usr/local/include/libftdi1 /usr/local/include/libusb-1.0";
+				OTHER_LDFLAGS = "-lServus -lndi -lftdi1 -lusb-1.0 -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
 				USE_HEADERMAP = NO;
@@ -2383,6 +2386,8 @@
 					"$(SRCROOT)/../../External/sdl/include",
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
 					"$(SRCROOT)/../../External/NDI/include",
+					"/usr/local/include/libftdi1",
+					"/usr/local/include/libusb-1.0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2392,13 +2397,14 @@
 					"$(inherited)",
 					"\"../../External/servus/lib/osx/${CURRENT_ARCH}/release\"",
 					"\"../../External/NDI/lib/osx\"",
+					"\"/usr/local/lib\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include";
-				OTHER_LDFLAGS = "-lServus -lndi -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include /usr/local/include/libftdi1 /usr/local/include/libusb-1.0";
+				OTHER_LDFLAGS = "-lServus -lndi -lftdi1 -lusb-1.0 -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
 				USE_HEADERMAP = NO;
@@ -2457,6 +2463,8 @@
 					"$(SRCROOT)/../../External/sdl/include",
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
 					"$(SRCROOT)/../../External/NDI/include",
+					"/usr/local/include/libftdi1",
+					"/usr/local/include/libusb-1.0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2466,13 +2474,14 @@
 					"$(inherited)",
 					"\"../../External/servus/lib/osx/${CURRENT_ARCH}/release\"",
 					"\"../../External/NDI/lib/osx\"",
+					"\"/usr/local/lib\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX\"",
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include";
-				OTHER_LDFLAGS = "-lServus -lndi -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include /usr/local/include/libftdi1 /usr/local/include/libusb-1.0";
+				OTHER_LDFLAGS = "-lServus -lndi -lftdi1 -lusb-1.0 -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
 				USE_HEADERMAP = NO;

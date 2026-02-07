@@ -15,7 +15,7 @@ class DMXDevice :
 	public Thread
 {
 public:
-	enum Type { OPENDMX, ENTTEC_DMXPRO, ENTTEC_MK2, ARTNET, EUROLITE, SACN, DMXKING };
+	enum Type { OPENDMX, ENTTEC_DMXPRO, ENTTEC_MK2, ARTNET, EUROLITE, SACN, DMXKING, OPENDMX_FTDI };
 	DMXDevice(const String &name, Type type, bool canReceive);
 	virtual ~DMXDevice();
 
