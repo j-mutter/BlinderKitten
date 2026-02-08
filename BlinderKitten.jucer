@@ -62,6 +62,10 @@
                 file="Source/UI/GridView/FixtureGridView.cpp"/>
           <FILE id="eXrXUQ" name="FixtureGridView.h" compile="0" resource="0"
                 file="Source/UI/GridView/FixtureGridView.h"/>
+          <FILE id="rOwj5V" name="GridAppearance.cpp" compile="1" resource="0"
+                file="Source/UI/GridView/GridAppearance.cpp"/>
+          <FILE id="RSxuNP" name="GridAppearance.h" compile="0" resource="0"
+                file="Source/UI/GridView/GridAppearance.h"/>
           <FILE id="I8JDeJ" name="GridView.cpp" compile="1" resource="0" file="Source/UI/GridView/GridView.cpp"/>
           <FILE id="Hb2YFS" name="GridView.h" compile="0" resource="0" file="Source/UI/GridView/GridView.h"/>
           <FILE id="FCSyGj" name="GroupGridView.cpp" compile="1" resource="0"
@@ -378,6 +382,18 @@
                 file="Source/Definitions/BKPathPreset/BKPathPresetManagerUI.cpp"/>
           <FILE id="elzMjT" name="BKPathPresetManagerUI.h" compile="0" resource="0"
                 file="Source/Definitions/BKPathPreset/BKPathPresetManagerUI.h"/>
+        </GROUP>
+        <GROUP id="{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}" name="Asset">
+          <FILE id="BkAs01" name="BKAsset.cpp" compile="1" resource="0" file="Source/Definitions/Asset/BKAsset.cpp"/>
+          <FILE id="BkAs02" name="BKAsset.h" compile="0" resource="0" file="Source/Definitions/Asset/BKAsset.h"/>
+          <FILE id="BkAs03" name="BKAssetManager.cpp" compile="1" resource="0"
+                file="Source/Definitions/Asset/BKAssetManager.cpp"/>
+          <FILE id="BkAs04" name="BKAssetManager.h" compile="0" resource="0"
+                file="Source/Definitions/Asset/BKAssetManager.h"/>
+          <FILE id="BkAs05" name="BKAssetManagerUI.cpp" compile="1" resource="0"
+                file="Source/Definitions/Asset/BKAssetManagerUI.cpp"/>
+          <FILE id="BkAs06" name="BKAssetManagerUI.h" compile="0" resource="0"
+                file="Source/Definitions/Asset/BKAssetManagerUI.h"/>
         </GROUP>
         <GROUP id="{73D46886-2B84-96F3-C061-A851C74457B5}" name="Bundle">
           <FILE id="ckXZhN" name="Bundle.cpp" compile="1" resource="0" file="Source/Definitions/Bundle/Bundle.cpp"/>

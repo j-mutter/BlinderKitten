@@ -13,6 +13,7 @@
 #include "Brain.h"
 #include "Definitions/Preset/Preset.h"
 #include "Definitions/Preset/PresetManager.h"
+#include "Definitions/Asset/BKAsset.h"
 #include "DataTransferManager/DataTransferManager.h"
 
 //==============================================================================
@@ -45,19 +46,12 @@ void PresetGridView::updateCells() {
     for (int i = 0; i < numberOfCells; i++) {
         Preset* g = Brain::getInstance()->getPresetById(i+1);
         if (g != nullptr) {
-            gridButtons[i]->removeColour(TextButton::buttonColourId);
-            gridButtons[i]->removeColour(TextButton::textColourOnId);
-            gridButtons[i]->removeColour(TextButton::textColourOffId);
-
-            gridButtons[i]->setButtonText(g->userName->getValue().toString());
+			gridButtons[i]->updateFromAppearance(&g->gridAppearance, g->userName->getValue());
         }
         else {
-            gridButtons[i]->setButtonText("");
-            gridButtons[i]->setColour(TextButton::buttonColourId, Colour(40, 40, 40));
-            gridButtons[i]->setColour(TextButton::textColourOnId, Colour(96, 96, 96));
-            gridButtons[i]->setColour(TextButton::textColourOffId, Colour(96, 96, 96));
-
+			gridButtons[i]->clear();
         }
+        gridButtons[i]->repaint();
     }
 }
 

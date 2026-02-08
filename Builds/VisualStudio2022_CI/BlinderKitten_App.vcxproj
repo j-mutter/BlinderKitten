@@ -167,6 +167,7 @@
     <ClCompile Include="..\..\Source\UI\GridView\CuelistGridView.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\EffectGridView.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\FixtureGridView.cpp"/>
+    <ClCompile Include="..\..\Source\UI\GridView\GridAppearance.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\GridView.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\GroupGridView.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\MapperGridView.cpp"/>
@@ -307,6 +308,9 @@
     <ClCompile Include="..\..\Source\Definitions\BKPathPreset\BKPathPreset.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManager.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManagerUI.cpp"/>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAsset.cpp"/>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManager.cpp"/>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\Bundle\Bundle.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\Bundle\BundleManager.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\Bundle\BundleManagerUI.cpp"/>
@@ -3504,6 +3508,7 @@
     <ClInclude Include="..\..\Source\UI\GridView\CuelistGridView.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\EffectGridView.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\FixtureGridView.h"/>
+    <ClInclude Include="..\..\Source\UI\GridView\GridAppearance.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\GridView.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\GroupGridView.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\MapperGridView.h"/>
@@ -3582,6 +3587,9 @@
     <ClInclude Include="..\..\Source\Definitions\BKPathPreset\BKPathPreset.h"/>
     <ClInclude Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManager.h"/>
     <ClInclude Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManagerUI.h"/>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAsset.h"/>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManager.h"/>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.h"/>
     <ClInclude Include="..\..\Source\Definitions\Bundle\Bundle.h"/>
     <ClInclude Include="..\..\Source\Definitions\Bundle\BundleManager.h"/>
     <ClInclude Include="..\..\Source\Definitions\Bundle\BundleManagerUI.h"/>

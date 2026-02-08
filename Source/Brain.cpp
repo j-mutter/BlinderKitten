@@ -59,6 +59,7 @@ void Brain::clear()
     trackers.clear();
     selectionMasters.clear();
     bundles.clear();
+    assets.clear();
     layouts.clear();
     cuelistPoolUpdating.clear();
     cuelistPoolWaiting.clear();
@@ -956,6 +957,40 @@ void Brain::unregisterBundle(Bundle* c) {
 }
 
 
+void Brain::registerAsset(BKAsset* p, int id, bool swap) {
+    int askedId = id;
+    if (assets.getReference(id) == p) { return; }
+    if (assets.containsValue(p)) {
+        assets.removeValue(p);
+    }
+    bool idIsOk = false;
+    if (swap && p->registeredId != 0) {
+        if (assets.contains(id) && assets.getReference(id) != nullptr) {
+            BKAsset* presentItem = assets.getReference(id);
+            unregisterAsset(p);
+            registerAsset(presentItem, p->registeredId, false);
+        }
+    }
+    while (!idIsOk) {
+        if (assets.contains(id) && assets.getReference(id) != nullptr) {
+            id++;
+        }
+        else {
+            idIsOk = true;
+        }
+    }
+    assets.set(id, p);
+    p->id->setValue(id);
+    p->registeredId = id;
+}
+
+
+void Brain::unregisterAsset(BKAsset* c) {
+    if (assets.containsValue(c)) {
+        assets.removeValue(c);
+    }
+}
+
 
 void Brain::pleaseUpdate(Cuelist* c) {
     if (c == nullptr) {return;}
@@ -1449,6 +1484,15 @@ SelectionMaster* Brain::getSelectionMasterById(int id) {
 Bundle* Brain::getBundleById(int id) {
     if (bundles.contains(id)) {
         return bundles.getReference(id);
+    }
+    else {
+        return nullptr;
+    }
+}
+
+BKAsset* Brain::getAssetById(int id) {
+    if (assets.contains(id)) {
+        return assets.getReference(id);
     }
     else {
         return nullptr;

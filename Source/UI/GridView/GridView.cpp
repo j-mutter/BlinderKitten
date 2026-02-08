@@ -27,7 +27,36 @@ GridViewUI::~GridViewUI()
 
 GridViewButton::GridViewButton()
 {
-    setWantsKeyboardFocus(false);
+	setWantsKeyboardFocus(false);
+	clear();
+}
+
+void GridViewButton::updateFromAppearance(GridAppearance* a, String name){
+	
+	int assetId = a->iconAssetId->intValue();
+	BKAsset* asset = (assetId > 0) ? Brain::getInstance()->getAssetById(assetId) : nullptr;
+
+	if (asset != nullptr && asset->hasValidImage()) {
+		iconImage = asset->getImage();
+		setButtonText("");
+	} else {
+		iconImage = Image();
+		setButtonText(name);
+	}
+
+	if (a->gridBackgroundColor->enabled) {
+		setColour(TextButton::buttonColourId, a->gridBackgroundColor->getColor());
+	} else {
+		removeColour(TextButton::buttonColourId);
+	}
+}
+
+void GridViewButton::clear(){
+	setButtonText("");
+	iconImage = Image();
+	setColour(TextButton::buttonColourId, Colour(40, 40, 40));
+	removeColour(TextButton::textColourOnId);
+	removeColour(TextButton::textColourOffId);
 }
 
 GridViewButton::~GridViewButton()
@@ -36,8 +65,42 @@ GridViewButton::~GridViewButton()
 
 void GridViewButton::paint(juce::Graphics& g)
 {
-    TextButton::paint(g);
-    g.drawFittedText(String(id), getLocalBounds(), Justification::topRight,1);
+	g.fillAll(Colour(29, 29, 29));
+	
+	g.setColour(findColour(TextButton::buttonColourId));
+	g.fillRect(getLocalBounds().reduced(1));
+	
+    if (iconImage.isValid()) {
+        auto bounds = getLocalBounds().reduced(4);
+        float imgAspect = (float)iconImage.getWidth() / iconImage.getHeight();
+        float boundsAspect = (float)bounds.getWidth() / bounds.getHeight();
+        int drawW, drawH;
+        if (imgAspect > boundsAspect) {
+            drawW = bounds.getWidth();
+            drawH = (int)(drawW / imgAspect);
+        } else {
+            drawH = bounds.getHeight();
+            drawW = (int)(drawH * imgAspect);
+        }
+        int drawX = bounds.getX() + (bounds.getWidth() - drawW) / 2;
+        int drawY = bounds.getY() + (bounds.getHeight() - drawH) / 2;
+        g.drawImage(iconImage, drawX, drawY, drawW, drawH, 0, 0, iconImage.getWidth(), iconImage.getHeight());
+
+        g.setColour(Colours::white.withAlpha(0.7f));
+        g.drawFittedText(String(id), getLocalBounds().reduced(2), Justification::topRight, 1);
+    } else {
+        Colour textCol = findColour(getToggleState() ? TextButton::textColourOnId : TextButton::textColourOffId);
+        g.setColour(textCol);
+        g.drawFittedText(getButtonText(), getLocalBounds().reduced(2), Justification::centred, 2);
+        g.setColour(Colours::white.withAlpha(0.7f));
+        g.drawFittedText(String(id), getLocalBounds().reduced(2), Justification::topRight, 1);
+    }
+	
+	if (isMouseOver()) {
+		g.fillAll(Colours::white.withAlpha(0.15f));
+	} else if (isMouseButtonDown()) {
+		g.fillAll(Colours::white.withAlpha(0.01f));
+	}
 }
 
 void GridViewButton::mouseDown(const MouseEvent& e)

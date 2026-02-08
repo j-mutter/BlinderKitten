@@ -81,6 +81,7 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/CuelistGridView_8ef10494.o \
   $(JUCE_OBJDIR)/EffectGridView_6b28bae.o \
   $(JUCE_OBJDIR)/FixtureGridView_2501c94c.o \
+  $(JUCE_OBJDIR)/GridAppearance_8933b53c.o \
   $(JUCE_OBJDIR)/GridView_42bfc13d.o \
   $(JUCE_OBJDIR)/GroupGridView_5fc98182.o \
   $(JUCE_OBJDIR)/MapperGridView_2ac6085e.o \
@@ -134,6 +135,9 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/BKPathPreset_490b261.o \
   $(JUCE_OBJDIR)/BKPathPresetManager_82b18296.o \
   $(JUCE_OBJDIR)/BKPathPresetManagerUI_dd5baeea.o \
+  $(JUCE_OBJDIR)/BKAsset_9c8c427a.o \
+  $(JUCE_OBJDIR)/BKAssetManager_d891545d.o \
+  $(JUCE_OBJDIR)/BKAssetManagerUI_3a8e2af1.o \
   $(JUCE_OBJDIR)/Bundle_9d272dc1.o \
   $(JUCE_OBJDIR)/BundleManager_5a5b7b36.o \
   $(JUCE_OBJDIR)/BundleManagerUI_7269ff8a.o \
@@ -318,6 +322,11 @@ $(JUCE_OBJDIR)/EffectGridView_6b28bae.o: ../../Source/UI/GridView/EffectGridView
 $(JUCE_OBJDIR)/FixtureGridView_2501c94c.o: ../../Source/UI/GridView/FixtureGridView.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling FixtureGridView.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/GridAppearance_8933b53c.o: ../../Source/UI/GridView/GridAppearance.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling GridAppearance.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/GridView_42bfc13d.o: ../../Source/UI/GridView/GridView.cpp
@@ -583,6 +592,21 @@ $(JUCE_OBJDIR)/BKPathPresetManager_82b18296.o: ../../Source/Definitions/BKPathPr
 $(JUCE_OBJDIR)/BKPathPresetManagerUI_dd5baeea.o: ../../Source/Definitions/BKPathPreset/BKPathPresetManagerUI.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling BKPathPresetManagerUI.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BKAsset_9c8c427a.o: ../../Source/Definitions/Asset/BKAsset.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling BKAsset.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BKAssetManager_d891545d.o: ../../Source/Definitions/Asset/BKAssetManager.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling BKAssetManager.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BKAssetManagerUI_3a8e2af1.o: ../../Source/Definitions/Asset/BKAssetManagerUI.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling BKAssetManagerUI.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/Bundle_9d272dc1.o: ../../Source/Definitions/Bundle/Bundle.cpp

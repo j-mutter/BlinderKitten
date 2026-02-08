@@ -15,7 +15,6 @@
 #include "../ChannelFamily/ChannelType/ChannelType.h"
 #include "../../Brain.h"
 #include "PresetManager.h"
-#include "UI/GridView/PresetGridView.h"
 #include "UserInputManager.h"
 #include "Definitions/DataTransferManager/DataTransferManager.h"
 #include "BKEngine.h"
@@ -65,6 +64,8 @@ Preset::Preset(var params) :
 	presetType->addOption("Fixture Type", 3);
 	presetType->addOption("Same Channels type", 4);
 
+	addChildControllableContainer(&gridAppearance);
+
 	// to add a manager with defined data
 	subFixtureValues.selectItemWhenCreated = false;
 	subFixtureValues.comparator.compareFunc = comparePresetContent;
@@ -96,6 +97,9 @@ void Preset::onContainerParameterChangedInternal(Parameter* p) {
 	if (p == presetType) {
 		checkIfProgrammerNeedUpdate();
 	}
+	if (p == userName) {
+		PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
+	}
 }
 
 
@@ -105,6 +109,13 @@ void Preset::onControllableFeedbackUpdateInternal(ControllableContainer* cc, Con
 	if (defaultPresetId == id->intValue()) {
 		Brain::getInstance()->defaultValuesNeedRefresh = true;
 	}
+	if (cc == &gridAppearance) {
+		PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
+	}
+}
+
+void Preset::onControllableStateChanged(Controllable * c) {
+	PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
 }
 
 void Preset::checkIfProgrammerNeedUpdate()

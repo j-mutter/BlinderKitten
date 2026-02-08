@@ -89,6 +89,9 @@
     <Filter Include="BlinderKitten\Source\Definitions\BKPathPreset">
       <UniqueIdentifier>{FCAD9489-59B0-0007-9FB7-11AFF4AC302D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BlinderKitten\Source\Definitions\Asset">
+      <UniqueIdentifier>{E81E1760-C5DA-AE1F-79DC-BF5D38189F59}</UniqueIdentifier>
+    </Filter>
     <Filter Include="BlinderKitten\Source\Definitions\Bundle">
       <UniqueIdentifier>{949BBD7E-A188-0513-A892-0DBC4CECC92B}</UniqueIdentifier>
     </Filter>
@@ -1174,6 +1177,9 @@
     <ClCompile Include="..\..\Source\UI\GridView\FixtureGridView.cpp">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\UI\GridView\GridAppearance.cpp">
+      <Filter>BlinderKitten\Source\UI\GridView</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\UI\GridView\GridView.cpp">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClCompile>
@@ -1419,6 +1425,15 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManagerUI.cpp">
       <Filter>BlinderKitten\Source\Definitions\BKPathPreset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAsset.cpp">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManager.cpp">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.cpp">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Definitions\Bundle\Bundle.cpp">
       <Filter>BlinderKitten\Source\Definitions\Bundle</Filter>
@@ -5070,6 +5085,9 @@
     <ClInclude Include="..\..\Source\UI\GridView\FixtureGridView.h">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\UI\GridView\GridAppearance.h">
+      <Filter>BlinderKitten\Source\UI\GridView</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\UI\GridView\GridView.h">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClInclude>
@@ -5303,6 +5321,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManagerUI.h">
       <Filter>BlinderKitten\Source\Definitions\BKPathPreset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAsset.h">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManager.h">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.h">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Definitions\Bundle\Bundle.h">
       <Filter>BlinderKitten\Source\Definitions\Bundle</Filter>

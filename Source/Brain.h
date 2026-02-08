@@ -30,6 +30,7 @@
 #include "Definitions/Tracker/Tracker.h"
 #include "Definitions/SelectionMaster/SelectionMaster.h"
 #include "Definitions/Bundle/Bundle.h"
+#include "Definitions/Asset/BKAsset.h"
 
 
 class Brain :
@@ -58,6 +59,7 @@ public:
     HashMap<int, SelectionMaster*>selectionMasters;
     HashMap<int, Layout*>layouts;
     HashMap<int, Bundle*>bundles;
+    HashMap<int, BKAsset*>assets;
 
     Array<Cuelist*> cuelistPoolUpdating;
     Array<Cuelist*> cuelistPoolWaiting;
@@ -150,6 +152,8 @@ public:
     void unregisterSelectionMaster(SelectionMaster* p);
     void registerBundle(Bundle* p, int id, bool swap = false);
     void unregisterBundle(Bundle* p);
+    void registerAsset(BKAsset* p, int id, bool swap = false);
+    void unregisterAsset(BKAsset* p);
 
     void pleaseUpdate(Cuelist* c);
     void pleaseUpdate(SubFixtureChannel* f);
@@ -183,6 +187,7 @@ public:
     Tracker* getTrackerById(int id);
     SelectionMaster* getSelectionMasterById(int id);
     Bundle* getBundleById(int id);
+    BKAsset* getAssetById(int id);
 
     void swoppedCuelist(Cuelist* c);
     void swoppedEffect(Effect* c);
