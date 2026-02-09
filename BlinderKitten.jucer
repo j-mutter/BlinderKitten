@@ -66,6 +66,10 @@
                 file="Source/UI/GridView/GridAppearance.cpp"/>
           <FILE id="GApr02" name="GridAppearance.h" compile="0" resource="0"
                 file="Source/UI/GridView/GridAppearance.h"/>
+          <FILE id="GVBtn1" name="GridViewButton.cpp" compile="1" resource="0"
+                file="Source/UI/GridView/GridViewButton.cpp"/>
+          <FILE id="GVBtn2" name="GridViewButton.h" compile="0" resource="0"
+                file="Source/UI/GridView/GridViewButton.h"/>
           <FILE id="I8JDeJ" name="GridView.cpp" compile="1" resource="0" file="Source/UI/GridView/GridView.cpp"/>
           <FILE id="Hb2YFS" name="GridView.h" compile="0" resource="0" file="Source/UI/GridView/GridView.h"/>
           <FILE id="FCSyGj" name="GroupGridView.cpp" compile="1" resource="0"

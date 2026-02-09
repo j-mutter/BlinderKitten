@@ -14,7 +14,7 @@
 class GridAppearance : public ControllableContainer
 {
 public:
-	GridAppearance();
+	GridAppearance(bool canHighlight = true);
 	~GridAppearance();
 
 	IntParameter* iconAssetId;
