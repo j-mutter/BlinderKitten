@@ -1183,6 +1183,9 @@
     <ClCompile Include="..\..\Source\UI\GridView\GridView.cpp">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\UI\GridView\GridViewButton.cpp">
+      <Filter>BlinderKitten\Source\UI\GridView</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\UI\GridView\GroupGridView.cpp">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClCompile>
@@ -5089,6 +5092,9 @@
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\GridView\GridView.h">
+      <Filter>BlinderKitten\Source\UI\GridView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UI\GridView\GridViewButton.h">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\GridView\GroupGridView.h">

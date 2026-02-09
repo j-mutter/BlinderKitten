@@ -173,6 +173,7 @@
     <ClCompile Include="..\..\Source\UI\GridView\FixtureGridView.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\GridAppearance.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\GridView.cpp"/>
+    <ClCompile Include="..\..\Source\UI\GridView\GridViewButton.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\GroupGridView.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\MapperGridView.cpp"/>
     <ClCompile Include="..\..\Source\UI\GridView\PresetGridView.cpp"/>
@@ -3514,6 +3515,7 @@
     <ClInclude Include="..\..\Source\UI\GridView\FixtureGridView.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\GridAppearance.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\GridView.h"/>
+    <ClInclude Include="..\..\Source\UI\GridView\GridViewButton.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\GroupGridView.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\MapperGridView.h"/>
     <ClInclude Include="..\..\Source\UI\GridView\PresetGridView.h"/>

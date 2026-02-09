@@ -83,6 +83,7 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/FixtureGridView_2501c94c.o \
   $(JUCE_OBJDIR)/GridAppearance_8933b53c.o \
   $(JUCE_OBJDIR)/GridView_42bfc13d.o \
+  $(JUCE_OBJDIR)/GridViewButton_de3fd58f.o \
   $(JUCE_OBJDIR)/GroupGridView_5fc98182.o \
   $(JUCE_OBJDIR)/MapperGridView_2ac6085e.o \
   $(JUCE_OBJDIR)/PresetGridView_d172ffc.o \
@@ -332,6 +333,11 @@ $(JUCE_OBJDIR)/GridAppearance_8933b53c.o: ../../Source/UI/GridView/GridAppearanc
 $(JUCE_OBJDIR)/GridView_42bfc13d.o: ../../Source/UI/GridView/GridView.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling GridView.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/GridViewButton_de3fd58f.o: ../../Source/UI/GridView/GridViewButton.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling GridViewButton.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/GroupGridView_5fc98182.o: ../../Source/UI/GridView/GroupGridView.cpp

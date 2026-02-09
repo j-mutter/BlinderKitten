@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "GridAppearance.h"
+#include "GridViewButton.h"
 
 class BKEngine;
 //==============================================================================
@@ -25,28 +25,6 @@ public:
 
     static GridViewUI* create(const String& name) { return new GridViewUI(name); }
 
-};
-
-
-class GridViewButton :
-    public TextButton,
-    public DragAndDropContainer
-{
-public:
-    GridViewButton();
-    ~GridViewButton();
-
-	void updateFromAppearance(GridAppearance* a, String name);
-	void clear();
-	
-    int id = 0;
-	
-    Image iconImage;
-    void paint(juce::Graphics&) override;
-
-    void mouseDown(const MouseEvent& e) override;
-    void mouseUp(const MouseEvent& e) override;
-    void mouseDrag(const MouseEvent& e) override;
 };
 
 class GridView  : 
