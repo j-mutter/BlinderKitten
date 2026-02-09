@@ -72,6 +72,7 @@ Carousel::Carousel(var params) :
 
 	soloPool = addIntParameter("Solo pool", "If greater than zero, only one element can be activated at a time with this number", 0,0);
 
+	addChildControllableContainer(&gridAppearance);
 	addChildControllableContainer(&speedMult);
 	addChildControllableContainer(&sizeMult);
 	rows.selectItemWhenCreated = false;
@@ -116,6 +117,9 @@ Carousel::~Carousel()
 
 void Carousel::onControllableFeedbackUpdateInternal(ControllableContainer* cc, Controllable* c) {
 	pleaseComputeIfRunning();
+	if (cc == &gridAppearance) {
+		Brain::getInstance()->carouselGridNeedRefresh = true;
+	}
 }
 
 

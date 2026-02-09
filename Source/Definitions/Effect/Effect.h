@@ -15,6 +15,7 @@
 #include "EffectRow.h"
 #include "Definitions/Multiplicator/MultiplicatorLinkManager.h"
 #include "Definitions/Interface/InterfaceIncludes.h"
+#include "../../UI/GridView/GridAppearance.h"
 
 class EffectParam;
 class SubFixtureChannel;
@@ -112,6 +113,8 @@ public:
 
     void flash(bool on, bool swop = false);
     bool userPressedGo = false;
+	
+	GridAppearance gridAppearance;
 
     static Effect* create(var params) { return new Effect(params); }
     

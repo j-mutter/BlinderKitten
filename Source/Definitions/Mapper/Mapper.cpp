@@ -47,6 +47,7 @@ Mapper::Mapper(var params) :
 	autoStartAndStop = addBoolParameter("Auto Start / Stop", "Start and stop the Mapper when size is modified", true);
 	sizeValue = addFloatParameter("Size", "Master of this Mapper", 1, 0, 1);
 
+	addChildControllableContainer(&gridAppearance);
 	rows.selectItemWhenCreated = false;
 	addChildControllableContainer(&rows);
 
@@ -77,6 +78,9 @@ Mapper::~Mapper()
 
 void Mapper::onControllableFeedbackUpdateInternal(ControllableContainer* cc, Controllable* c) {
 	pleaseComputeIfRunning();
+	if (cc == &gridAppearance) {
+		Brain::getInstance()->mapperGridNeedRefresh = true;
+	}
 }
 
 

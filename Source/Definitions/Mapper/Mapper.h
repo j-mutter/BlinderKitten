@@ -13,6 +13,7 @@
 #include "JuceHeader.h"
 #include "../Command/CommandSelectionManager.h"
 #include "MapperRow.h"
+#include "../../UI/GridView/GridAppearance.h"
 class MapperStep;
 class SubFixtureChannel;
 
@@ -60,6 +61,8 @@ public:
     void start();
     void stop();
     float applyToChannel(SubFixtureChannel* fc, float currentVal, double now);
+
+	GridAppearance gridAppearance;
 
     static Mapper* create(var params) { return new Mapper(params); }
     
