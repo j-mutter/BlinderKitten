@@ -44,36 +44,14 @@ MapperGridView::~MapperGridView()
 void MapperGridView::updateCells() {
     for (int i = 0; i < numberOfCells; i++) {
         Mapper* g = Brain::getInstance()->getMapperById(i+1);
-        if (g != nullptr) {
-            gridButtons[i]->removeColour(TextButton::buttonColourId);
-            gridButtons[i]->removeColour(TextButton::textColourOnId);
-            gridButtons[i]->removeColour(TextButton::textColourOffId);
-
-            gridButtons[i]->setButtonText(g->userName->getValue().toString());
-        }
-        else {
-            gridButtons[i]->setButtonText("");
-            gridButtons[i]->setColour(TextButton::buttonColourId, Colour(40, 40, 40));
-            gridButtons[i]->setColour(TextButton::textColourOnId, Colour(96, 96, 96));
-            gridButtons[i]->setColour(TextButton::textColourOffId, Colour(96, 96, 96));
-
-        }
-    }
-}
-
-void MapperGridView::updateButtons()
-{
-    const MessageManagerLock mmLock;
-    for (int i = 0; i < numberOfCells; i++) {
-        Mapper* c = Brain::getInstance()->getMapperById(i + 1);
-        if (c != nullptr) {
-            if (c->isMapperOn->boolValue()) {
-                gridButtons[i]->setColour(TextButton::buttonColourId, juce::Colour(64, 80, 64));
-            }
-            else {
-                gridButtons[i]->removeColour(TextButton::buttonColourId);
-            }
-        }
+		if (g != nullptr) {
+			gridButtons[i]->updateFromAppearance(&g->gridAppearance, g->userName->getValue());
+			gridButtons[i]->setToggleState(g->isMapperOn->boolValue(), NotificationType::dontSendNotification);
+		}
+		else {
+			gridButtons[i]->clear();
+		}
+		gridButtons[i]->repaint();
     }
 }
 

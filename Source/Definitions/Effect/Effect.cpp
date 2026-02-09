@@ -72,6 +72,8 @@ Effect::Effect(var params) :
 
 	soloPool = addIntParameter("Solo pool", "If greater than zero, only one element can be activated at a time with this number", 0, 0);
 
+	addChildControllableContainer(&gridAppearance);
+	
 	values.selectItemWhenCreated = false;
 	addChildControllableContainer(&speedMult);
 	addChildControllableContainer(&sizeMult);
@@ -114,6 +116,10 @@ Effect::~Effect()
 
 void Effect::onControllableFeedbackUpdateInternal(ControllableContainer* cc, Controllable* c) {
 	pleaseComputeIfRunning();
+	
+	if (cc == &gridAppearance) {
+		Brain::getInstance()->effectGridNeedRefresh = true;
+	}
 }
 
 

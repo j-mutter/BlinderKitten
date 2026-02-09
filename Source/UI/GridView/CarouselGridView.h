@@ -38,7 +38,6 @@ public:
     ~CarouselGridView() override;
     
     void updateCells() override;
-    void updateButtons();
     void showContextMenu(int id) override;
     void newMessage(const CarouselManager::ManagerEvent& e) override;
 

@@ -15,6 +15,7 @@
 #include "CarouselRow.h"
 #include "Definitions/Multiplicator/MultiplicatorLinkManager.h"
 #include "Definitions/Interface/InterfaceIncludes.h"
+#include "../../UI/GridView/GridAppearance.h"
 
 class CarouselStep;
 class SubFixtureChannel;
@@ -108,6 +109,8 @@ public:
 
     void flash(bool on, bool swop = false);
     bool userPressedGo = false;
+
+	GridAppearance gridAppearance;
 
     static Carousel* create(var params) { return new Carousel(params); }
     

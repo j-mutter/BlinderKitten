@@ -38,7 +38,6 @@ public:
     ~EffectGridView() override;
     
     void updateCells() override;
-    void updateButtons();
     void showContextMenu(int id) override;
     void newMessage(const EffectManager::ManagerEvent& e) override;
 

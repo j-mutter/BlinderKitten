@@ -288,17 +288,17 @@ void Brain::brainLoop() {
 
     if (carouselGridNeedRefresh) {
         carouselGridNeedRefresh = false;
-        MessageManager::callAsync([this]() {CarouselGridView::getInstance()->updateButtons(); });
+        CarouselManager::getInstance()->managerNotifier.addMessage(new CarouselManager::ManagerEvent(CarouselManager::ManagerEvent::NEEDS_UI_UPDATE));
     }
 
     if (effectGridNeedRefresh) {
         effectGridNeedRefresh = false;
-        MessageManager::callAsync([this]() {EffectGridView::getInstance()->updateButtons(); });
+        EffectManager::getInstance()->managerNotifier.addMessage(new EffectManager::ManagerEvent(EffectManager::ManagerEvent::NEEDS_UI_UPDATE));
     }
 
     if (mapperGridNeedRefresh) {
         mapperGridNeedRefresh = false;
-        MessageManager::callAsync([this]() {MapperGridView::getInstance()->updateButtons(); });
+        MapperManager::getInstance()->managerNotifier.addMessage(new MapperManager::ManagerEvent(MapperManager::ManagerEvent::NEEDS_UI_UPDATE));
     }
 
     if (defaultValuesNeedRefresh) {
