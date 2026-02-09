@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "GridAppearance.h"
 class BKEngine;
 //==============================================================================
 /*
@@ -35,7 +36,10 @@ public:
     ~GridViewButton();
 
     int id = 0;
+    Image iconImage;
 
+    void updateFromAppearance(GridAppearance* a, String name);
+    void clear();
     void paint(juce::Graphics&) override;
 
     void mouseDown(const MouseEvent& e) override;

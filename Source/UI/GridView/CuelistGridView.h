@@ -38,7 +38,6 @@ public:
     ~CuelistGridView() override;
     
     void updateCells() override;
-    void updateButtons();
     void showContextMenu(int id) override;
     void newMessage(const CuelistManager::ManagerEvent& e) override;
 

@@ -233,6 +233,8 @@ Cuelist::Cuelist(var params) :
 	// currentCue->targetType = TargetParameter::CONTAINER;
 
 	renumberCuesBtn = addTrigger("Renumber cues", "Reset all cues IDs");
+	
+	addChildControllableContainer(&gridAppearance);
 
 	addChildControllableContainer(&cues);
 
@@ -485,7 +487,9 @@ void Cuelist::onControllableFeedbackUpdateInternal(ControllableContainer* cc, Co
 	else if (c == chaserGenButton) {
 		autoCreateChaser();
 	}
-
+	if (cc == &gridAppearance) {
+		Brain::getInstance()->cuelistGridNeedRefresh = true;
+	}
 }
 
 void Cuelist::afterLoadJSONDataInternal()
@@ -1540,6 +1544,7 @@ void Cuelist::updateName() {
 	}
 	setNiceName(String((int)id->getValue()) + " - " + n);
 	Brain::getInstance()->reconstructVirtuals = true;
+	Brain::getInstance()->cuelistGridNeedRefresh = true;
 }
 
 void Cuelist::renumberCues() {

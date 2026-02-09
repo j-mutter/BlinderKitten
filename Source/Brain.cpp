@@ -394,7 +394,7 @@ void Brain::brainLoop() {
 
     if (cuelistGridNeedRefresh) {
         cuelistGridNeedRefresh = false;
-        MessageManager::callAsync([this]() {CuelistGridView::getInstance()->updateButtons(); });
+		CuelistManager::getInstance()->managerNotifier.addMessage(new CuelistManager::ManagerEvent(CuelistManager::ManagerEvent::NEEDS_UI_UPDATE));
     }
 
     if (carouselGridNeedRefresh) {

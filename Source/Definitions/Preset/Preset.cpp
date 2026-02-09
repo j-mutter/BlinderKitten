@@ -100,6 +100,7 @@ void Preset::onContainerParameterChangedInternal(Parameter* p) {
 	}
 	if (p == userName || p == id) {
 		updateName();
+		PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
 	}
 	if (p == presetType) {
 		checkIfProgrammerNeedUpdate();
