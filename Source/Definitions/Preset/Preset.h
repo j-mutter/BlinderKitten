@@ -67,7 +67,6 @@ public:
     void removeProgContent();
 
     void onControllableFeedbackUpdateInternal(ControllableContainer* cc, Controllable* c) override;
-	void onControllableStateChanged(Controllable * c) override;
     void checkIfProgrammerNeedUpdate();
 
 };

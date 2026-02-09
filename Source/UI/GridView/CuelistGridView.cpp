@@ -45,39 +45,15 @@ CuelistGridView::~CuelistGridView()
 void CuelistGridView::updateCells() {
     for (int i = 0; i < numberOfCells; i++) {
         Cuelist* g = Brain::getInstance()->getCuelistById(i+1);
-        if (g != nullptr) {
-            gridButtons[i]->removeColour(TextButton::buttonColourId);
-            gridButtons[i]->removeColour(TextButton::textColourOnId);
-            gridButtons[i]->removeColour(TextButton::textColourOffId);
-
-            gridButtons[i]->setButtonText(g->userName->stringValue());
-        }
-        else {
-            gridButtons[i]->setButtonText("");
-            gridButtons[i]->setColour(TextButton::buttonColourId, Colour(40, 40, 40));
-            gridButtons[i]->setColour(TextButton::textColourOnId, Colour(96, 96, 96));
-            gridButtons[i]->setColour(TextButton::textColourOffId, Colour(96, 96, 96));
-
-        }
+		if (g != nullptr) {
+			gridButtons[i]->updateFromAppearance(&g->gridAppearance, g->userName->getValue());
+			gridButtons[i]->setToggleState(g->isCuelistOn->boolValue(), NotificationType::dontSendNotification);
+		}
+		else {
+			gridButtons[i]->clear();
+		}
+		gridButtons[i]->repaint();
     }
-    updateButtons();
-}
-
-void CuelistGridView::updateButtons()
-{
-    const MessageManagerLock mmLock;
-    for (int i = 0; i < numberOfCells; i++) {
-        Cuelist* c = Brain::getInstance()->getCuelistById(i+1);
-        if (c != nullptr) {
-            if (c->isCuelistOn->boolValue()) {
-                gridButtons[i]->setColour(TextButton::buttonColourId, juce::Colour(64, 80, 64));
-            }
-            else {
-                gridButtons[i]->removeColour(TextButton::buttonColourId);
-            }
-        }
-    }
-
 }
 
 void CuelistGridView::showContextMenu(int id)

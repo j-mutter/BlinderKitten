@@ -15,6 +15,7 @@
 #include "Definitions/Command/CommandValueManager.h"
 #include "Command/MoveInBlackManager.h"
 #include "Definitions/Interface/InterfaceIncludes.h"
+#include "../../UI/GridView/GridAppearance.h"
 
 class Cuelist:
     public BaseItem,
@@ -98,6 +99,8 @@ public:
     Trigger* selectAsMainConductorBtn;
 
     BoolParameter * isCuelistOn;
+	
+	GridAppearance gridAppearance;
 
     FloatParameter* HTPLevel;
     FloatParameter* LTPLevel;

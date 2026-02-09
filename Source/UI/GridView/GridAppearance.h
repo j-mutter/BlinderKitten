@@ -18,5 +18,10 @@ public:
 	~GridAppearance();
 
 	IntParameter* iconAssetId;
-	ColorParameter* gridBackgroundColor;
+	
+	ColorParameter* backgroundColor;
+	ColorParameter* textColor;
+	
+	ColorParameter* highlightColor;
+	ColorParameter* highlightTextColor;
 };

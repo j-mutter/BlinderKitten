@@ -93,12 +93,10 @@ void Preset::onContainerParameterChangedInternal(Parameter* p) {
 	}
 	if (p == userName || p == id) {
 		updateName();
+		PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
 	}
 	if (p == presetType) {
 		checkIfProgrammerNeedUpdate();
-	}
-	if (p == userName) {
-		PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
 	}
 }
 
@@ -112,10 +110,6 @@ void Preset::onControllableFeedbackUpdateInternal(ControllableContainer* cc, Con
 	if (cc == &gridAppearance) {
 		PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
 	}
-}
-
-void Preset::onControllableStateChanged(Controllable * c) {
-	PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
 }
 
 void Preset::checkIfProgrammerNeedUpdate()

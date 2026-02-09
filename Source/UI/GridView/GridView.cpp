@@ -44,17 +44,18 @@ void GridViewButton::updateFromAppearance(GridAppearance* a, String name){
 		setButtonText(name);
 	}
 
-	if (a->gridBackgroundColor->enabled) {
-		setColour(TextButton::buttonColourId, a->gridBackgroundColor->getColor());
-	} else {
-		removeColour(TextButton::buttonColourId);
-	}
+	setColour(TextButton::buttonColourId, a->backgroundColor->getColor());
+	setColour(TextButton::textColourOffId, a->textColor->getColor());
+	
+	setColour(TextButton::buttonOnColourId, a->highlightColor->getColor());
+	setColour(TextButton::textColourOnId, a->highlightTextColor->getColor());
 }
 
 void GridViewButton::clear(){
 	setButtonText("");
 	iconImage = Image();
 	setColour(TextButton::buttonColourId, Colour(40, 40, 40));
+	removeColour(TextButton::buttonOnColourId);
 	removeColour(TextButton::textColourOnId);
 	removeColour(TextButton::textColourOffId);
 }
@@ -65,9 +66,11 @@ GridViewButton::~GridViewButton()
 
 void GridViewButton::paint(juce::Graphics& g)
 {
-	g.fillAll(Colour(29, 29, 29));
+	Colour strokeCol = getToggleState() ? Colour(252, 126, 36) : Colour(29, 29, 29);
+	g.fillAll(strokeCol);
 	
-	g.setColour(findColour(TextButton::buttonColourId));
+	Colour bgCol = findColour(getToggleState() ? TextButton::buttonOnColourId : TextButton::buttonColourId);
+	g.setColour(bgCol);
 	g.fillRect(getLocalBounds().reduced(1));
 	
     if (iconImage.isValid()) {
