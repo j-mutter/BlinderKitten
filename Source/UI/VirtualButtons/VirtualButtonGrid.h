@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "VirtualButtonGridButton.h"
 
 class VirtualButton;
 class BKEngine;
@@ -45,7 +46,7 @@ public:
     TextButton pagePlusBtn;
     TextButton pageDisplayBtn;
     TextButton pageMinusBtn;
-    OwnedArray<TextButton> gridButtons;
+    OwnedArray<VirtualButtonGridButton> gridButtons;
 
     void paint (juce::Graphics&) override;
     void resized() override;
@@ -54,13 +55,13 @@ public:
     int cols = 1;
     int page = 1;
 
-    HashMap<TextButton*, VirtualButton*> buttonToVirtualButton;
+    HashMap<VirtualButtonGridButton*, VirtualButton*> buttonToVirtualButton;
 
     void buttonClicked(juce::Button* button) override;
     void buttonStateChanged(juce::Button* button) override;
 
-    void buttonPressedDown(juce::TextButton* button);
-    void buttonPressedUp(juce::TextButton* button);
+    void buttonPressedDown(VirtualButtonGridButton* button);
+    void buttonPressedUp(VirtualButtonGridButton* button);
 
     void editCell(int id);
     void deleteCell(int id);

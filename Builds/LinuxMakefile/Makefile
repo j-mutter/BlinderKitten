@@ -91,6 +91,7 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/PatchSheetLine_d2553e51.o \
   $(JUCE_OBJDIR)/VirtualButton_57e0460.o \
   $(JUCE_OBJDIR)/VirtualButtonGrid_861b1346.o \
+  $(JUCE_OBJDIR)/VirtualButtonGridButton_8c6dbcd8.o \
   $(JUCE_OBJDIR)/VirtualButtonManager_c5a2c3b7.o \
   $(JUCE_OBJDIR)/VirtualButtonManagerUI_29012bcb.o \
   $(JUCE_OBJDIR)/VirtualFaderButton_277ac860.o \
@@ -373,6 +374,11 @@ $(JUCE_OBJDIR)/VirtualButton_57e0460.o: ../../Source/UI/VirtualButtons/VirtualBu
 $(JUCE_OBJDIR)/VirtualButtonGrid_861b1346.o: ../../Source/UI/VirtualButtons/VirtualButtonGrid.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling VirtualButtonGrid.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/VirtualButtonGridButton_8c6dbcd8.o: ../../Source/UI/VirtualButtons/VirtualButtonGridButton.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling VirtualButtonGridButton.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/VirtualButtonManager_c5a2c3b7.o: ../../Source/UI/VirtualButtons/VirtualButtonManager.cpp

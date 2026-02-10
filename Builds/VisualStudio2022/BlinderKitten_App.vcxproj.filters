@@ -1207,6 +1207,9 @@
     <ClCompile Include="..\..\Source\UI\VirtualButtons\VirtualButtonGrid.cpp">
       <Filter>BlinderKitten\Source\UI\VirtualButtons</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\UI\VirtualButtons\VirtualButtonGridButton.cpp">
+      <Filter>BlinderKitten\Source\UI\VirtualButtons</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\UI\VirtualButtons\VirtualButtonManager.cpp">
       <Filter>BlinderKitten\Source\UI\VirtualButtons</Filter>
     </ClCompile>
@@ -5116,6 +5119,9 @@
       <Filter>BlinderKitten\Source\UI\VirtualButtons</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\VirtualButtons\VirtualButtonGrid.h">
+      <Filter>BlinderKitten\Source\UI\VirtualButtons</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UI\VirtualButtons\VirtualButtonGridButton.h">
       <Filter>BlinderKitten\Source\UI\VirtualButtons</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\VirtualButtons\VirtualButtonManager.h">

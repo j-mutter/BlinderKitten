@@ -124,6 +124,7 @@
 		8906A30CCAC1B20D4146A05C /* ForceFeedback.framework */ = {isa = PBXBuildFile; fileRef = 6B4DF839D3319E099D7CD050; };
 		8AB2A105E3641CB1FD90FE6E /* include_juce_audio_processors.mm */ = {isa = PBXBuildFile; fileRef = 109D60C79CE07D798A450035; };
 		8AB71EEF08C09769A060EF7C /* include_juce_audio_formats.mm */ = {isa = PBXBuildFile; fileRef = C6E8B1EF1AE52D6DE06C84F5; };
+		8B598369653B9A56040B84B9 /* VirtualButtonGridButton.cpp */ = {isa = PBXBuildFile; fileRef = 1FEB61ED3BCF7D8E33943F9C; };
 		8B9E9980F61994ED3E865221 /* GroupManagerUI.cpp */ = {isa = PBXBuildFile; fileRef = CDB787CA66AD924BEF74A4BB; };
 		8DD3729F6188759B40102931 /* include_juce_opengl.mm */ = {isa = PBXBuildFile; fileRef = E48F8E5B114A5B8C0F6B01D5; };
 		8F82A5410E33C28A76B5D535 /* CueTimecodeManager.cpp */ = {isa = PBXBuildFile; fileRef = 5CFDBBA045C8595A90FCAB64; };
@@ -292,6 +293,7 @@
 		1F27CAE0C511DE892BDA833D /* VirtualFaderColGrid.h */ /* VirtualFaderColGrid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VirtualFaderColGrid.h; path = ../../Source/UI/VirtualFaders/VirtualFaderColGrid.h; sourceTree = SOURCE_ROOT; };
 		1F4A84A1AF9CDB48E3E47DEC /* DMXEnttecProDevice.cpp */ /* DMXEnttecProDevice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DMXEnttecProDevice.cpp; path = ../../Source/Common/DMX/device/DMXEnttecProDevice.cpp; sourceTree = SOURCE_ROOT; };
 		1F8FDDAFF372B9CAD8189472 /* DataTransferManager.h */ /* DataTransferManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataTransferManager.h; path = ../../Source/Definitions/DataTransferManager/DataTransferManager.h; sourceTree = SOURCE_ROOT; };
+		1FEB61ED3BCF7D8E33943F9C /* VirtualButtonGridButton.cpp */ /* VirtualButtonGridButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VirtualButtonGridButton.cpp; path = ../../Source/UI/VirtualButtons/VirtualButtonGridButton.cpp; sourceTree = SOURCE_ROOT; };
 		20CE80DE139F3B0F383B26E9 /* include_juce_organicui3.cpp */ /* include_juce_organicui3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_organicui3.cpp; path = ../../JuceLibraryCode/include_juce_organicui3.cpp; sourceTree = SOURCE_ROOT; };
 		215C5850406A5B40FA71BD43 /* cobs.h */ /* cobs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cobs.h; path = ../../Source/Common/Serial/lib/cobs/cobs.h; sourceTree = SOURCE_ROOT; };
 		21EC90556B4FFDE4E23220A1 /* CarouselRow.h */ /* CarouselRow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CarouselRow.h; path = ../../Source/Definitions/Carousel/CarouselRow.h; sourceTree = SOURCE_ROOT; };
@@ -724,6 +726,7 @@
 		F980AFFF8FDA0D516F9018A1 /* MapperManagerUI.h */ /* MapperManagerUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MapperManagerUI.h; path = ../../Source/Definitions/Mapper/MapperManagerUI.h; sourceTree = SOURCE_ROOT; };
 		F9A1EAAA5BE76A050C62137D /* SelectionMaster.h */ /* SelectionMaster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SelectionMaster.h; path = ../../Source/Definitions/SelectionMaster/SelectionMaster.h; sourceTree = SOURCE_ROOT; };
 		F9A4290FF076B35A5B892C2D /* SceneHelpers.cpp */ /* SceneHelpers.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SceneHelpers.cpp; path = ../../Source/Common/Helpers/SceneHelpers.cpp; sourceTree = SOURCE_ROOT; };
+		FA0190D5B055A39F6C4B4666 /* VirtualButtonGridButton.h */ /* VirtualButtonGridButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VirtualButtonGridButton.h; path = ../../Source/UI/VirtualButtons/VirtualButtonGridButton.h; sourceTree = SOURCE_ROOT; };
 		FA04C43D1B8451369F5696D9 /* BKPathPresetManager.cpp */ /* BKPathPresetManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BKPathPresetManager.cpp; path = ../../Source/Definitions/BKPathPreset/BKPathPresetManager.cpp; sourceTree = SOURCE_ROOT; };
 		FB140298FE0AC8114058BD18 /* UserInputManager.h */ /* UserInputManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserInputManager.h; path = ../../Source/UserInputManager.h; sourceTree = SOURCE_ROOT; };
 		FB3021C6F118F2429153A46E /* EffectManager.h */ /* EffectManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EffectManager.h; path = ../../Source/Definitions/Effect/EffectManager.h; sourceTree = SOURCE_ROOT; };
@@ -825,6 +828,8 @@
 				499845ABEE168A07449EC477,
 				ABE76DCBEAF0674A7B5D1376,
 				E945B544F1EBA285C7E7E74C,
+				1FEB61ED3BCF7D8E33943F9C,
+				FA0190D5B055A39F6C4B4666,
 				F143BFE6379F15C22E5CA0E0,
 				0613D01E75FCE992624A213C,
 				E70C3FAF3AAE783408D9E0A9,
@@ -1967,6 +1972,7 @@
 				2751F1BD91EB49A53091CE29,
 				FB298395462FBA9AFF2D22E3,
 				DD1D753FD64B4DEEC2A0513E,
+				8B598369653B9A56040B84B9,
 				2FAEBCAB66A7EC540282C966,
 				F76C82799CF40A10409A34A2,
 				0B3021515609D68B5AECF7FA,

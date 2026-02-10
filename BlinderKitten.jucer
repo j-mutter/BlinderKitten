@@ -100,6 +100,10 @@
                 file="Source/UI/VirtualButtons/VirtualButtonGrid.cpp"/>
           <FILE id="i5Iann" name="VirtualButtonGrid.h" compile="0" resource="0"
                 file="Source/UI/VirtualButtons/VirtualButtonGrid.h"/>
+          <FILE id="vbgb01" name="VirtualButtonGridButton.cpp" compile="1" resource="0"
+                file="Source/UI/VirtualButtons/VirtualButtonGridButton.cpp"/>
+          <FILE id="vbgb02" name="VirtualButtonGridButton.h" compile="0" resource="0"
+                file="Source/UI/VirtualButtons/VirtualButtonGridButton.h"/>
           <FILE id="tsvuhQ" name="VirtualButtonManager.cpp" compile="1" resource="0"
                 file="Source/UI/VirtualButtons/VirtualButtonManager.cpp"/>
           <FILE id="O6HPL6" name="VirtualButtonManager.h" compile="0" resource="0"

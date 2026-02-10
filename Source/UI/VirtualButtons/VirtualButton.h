@@ -11,6 +11,7 @@
 #pragma once
 #include "JuceHeader.h"
 #include "Common/CommonIncludes.h"
+#include "UI/GridView/GridAppearance.h"
 
 class VirtualButton :
     public BaseItem
@@ -29,8 +30,8 @@ public:
     IntParameter * rowNumber;
     IntParameter * colNumber;
     StringParameter * customText;
-    BoolParameter * customColorEnabled;
-    ColorParameter * customColor;
+
+    GridAppearance gridAppearance;
 
     EnumParameter * targetType;
     IntParameter * targetId;
@@ -44,14 +45,13 @@ public:
     ActionManager actionManager;
 
     void onContainerParameterChangedInternal(Parameter* p) override;
+    void onControllableFeedbackUpdateInternal(ControllableContainer* cc, Controllable* c) override;
     void updateName();
     void updateDisplay();
 
     void pressed();
     void released();
     String getBtnText();
-    bool useCustomColor();
-    juce::Colour getCustomColor();
 
     void updateStatus(bool forceRefresh = false);
     void feedback(ButtonStatus value);
