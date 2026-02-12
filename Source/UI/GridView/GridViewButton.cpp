@@ -37,10 +37,9 @@ void GridViewButton::updateFromAppearance(GridAppearance* a, String name)
         setButtonText(name);
     }
 
-    setColour(TextButton::buttonColourId, a->backgroundColor->getColor());
-    setColour(TextButton::textColourOffId, a->textColor->getColor());
-    setColour(TextButton::buttonOnColourId, a->highlightColor->getColor());
-    setColour(TextButton::textColourOnId, a->highlightTextColor->getColor());
+    setColour(TextButton::buttonColourId, a->backgroundColour());
+    setColour(TextButton::buttonOnColourId, a->highlightColour());
+    setColour(TextButton::textColourOffId, a->textColour());
 }
 
 void GridViewButton::clear()

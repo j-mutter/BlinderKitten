@@ -33,7 +33,7 @@ Preset::Preset(var params) :
 	objectType(params.getProperty("type", "Preset").toString()),
 	objectData(params),
     devTypeParam(),
-	gridAppearance(false),
+	gridAppearance(),
 	subFixtureValues("Subfixtures")
 {
 	saveAndLoadRecursiveData = true;

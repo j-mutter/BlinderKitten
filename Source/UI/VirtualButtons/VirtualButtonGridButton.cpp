@@ -36,10 +36,9 @@ void VirtualButtonGridButton::updateFromAppearance(GridAppearance* a, String nam
         setButtonText(name);
     }
 
-    setColour(TextButton::buttonColourId, a->backgroundColor->getColor());
-    setColour(TextButton::textColourOffId, a->textColor->getColor());
-    setColour(TextButton::buttonOnColourId, a->highlightColor->getColor());
-    setColour(TextButton::textColourOnId, a->highlightTextColor->getColor());
+    setColour(TextButton::buttonColourId, a->backgroundColour());
+    setColour(TextButton::buttonOnColourId, a->highlightColour());
+    setColour(TextButton::textColourOffId, a->textColour());
 }
 
 void VirtualButtonGridButton::updateStatus(ButtonStatus status)
@@ -52,7 +51,7 @@ void VirtualButtonGridButton::clear()
     setButtonText("");
     iconImage = Image();
     currentStatus = BTN_UNASSIGNED;
-    setColour(TextButton::buttonColourId, Colour(32, 32, 32));
+    setColour(TextButton::buttonColourId, Colour(40, 40, 40));
     removeColour(TextButton::buttonOnColourId);
     removeColour(TextButton::textColourOnId);
     removeColour(TextButton::textColourOffId);
@@ -60,40 +59,47 @@ void VirtualButtonGridButton::clear()
 
 void VirtualButtonGridButton::paintButton(juce::Graphics& g, bool shouldDrawButtonAsHighlighted, bool shouldDrawButtonAsDown)
 {
-    // Determine background colour based on status
     Colour bgCol = findColour(TextButton::buttonColourId);
+	
+	g.fillAll(Colour(29, 29, 29)); // Dark grey for grid lines
 
+	Colour strokeCol = bgCol;
+	int strokeSize = 2;
     if (currentStatus == BTN_GENERIC) {
-        bgCol = juce::Colour(64, 64, 80);
+		strokeCol = juce::Colour(100, 10, 100); // Purple
     }
     else if (currentStatus == BTN_ON) {
-        bgCol = findColour(TextButton::buttonOnColourId);
+		strokeCol = Colour(252, 126, 36); // Orange like other grid buttons when active
     }
     else if (currentStatus == BTN_ON_LOADED) {
-        bgCol = juce::Colour(64, 80, 80);
+		strokeCol = Colour(30, 165, 234); // Bright Blue
     }
     else if (currentStatus == BTN_OFF_LOADED) {
-        bgCol = juce::Colour(64, 80, 80);
+		strokeCol = juce::Colour(28, 142, 113); // Dull blue
     }
     else if (currentStatus == BTN_CURRENTCUE) {
-        bgCol = juce::Colour(64, 120, 64);
+		strokeCol =  juce::Colour(93, 171, 57); // Bright Green
     }
     else if (currentStatus == BTN_LOADEDCUE) {
-        bgCol = juce::Colour(64, 64, 120);
-    }
+		strokeCol = juce::Colour(64, 120, 64); // Dull green
+	} else {
+		// No stroke for OFF or UNASSIGNED
+		strokeSize = 0;
+	}
 
-    // Border: orange when active, dark otherwise
-    bool isActive = (currentStatus == BTN_ON || currentStatus == BTN_ON_LOADED);
-    Colour strokeCol = isActive ? Colour(252, 126, 36) : Colour(29, 29, 29);
-    g.fillAll(strokeCol);
+	// Reduce to show 1px grid lines on all sides
+	auto bounds = getLocalBounds().reduced(1);
 
-    g.setColour(bgCol);
-    g.fillRect(getLocalBounds().reduced(1));
+	if (strokeSize > 0) {
+		g.setColour(strokeCol);
+		g.fillRect(bounds);
+		bounds = bounds.reduced(strokeSize);
+	}
 
-    // Choose text colour based on active state
-    Colour textCol = isActive
-        ? findColour(TextButton::textColourOnId)
-        : findColour(TextButton::textColourOffId);
+	g.setColour(bgCol);
+	g.fillRect(bounds);
+
+    Colour textCol = findColour(TextButton::textColourOnId);
 
     if (iconImage.isValid()) {
         auto bounds = getLocalBounds().reduced(4);

@@ -14,14 +14,21 @@
 class GridAppearance : public ControllableContainer
 {
 public:
-	GridAppearance(bool canHighlight = true);
+	GridAppearance(Colour background = Colour(40, 40, 40), Colour highlight = Colour(165, 85, 27));
 	~GridAppearance();
 
 	IntParameter* iconAssetId;
-	
-	ColorParameter* backgroundColor;
-	ColorParameter* textColor;
-	
-	ColorParameter* highlightColor;
-	ColorParameter* highlightTextColor;
+
+	ColorParameter* backgroundColourParam;
+	ColorParameter* textColourParam;
+
+	Colour backgroundColour();
+	Colour highlightColour();
+
+	Colour textColour();
+
+	void updateDefaultColours(Colour background, Colour highlight);
+private:
+	Colour defaultBackgoundColour;
+	Colour defaultHighlightColour;
 };
