@@ -31,7 +31,8 @@ DMXInterface::DMXInterface() :
 		->addOption("Eurolite USB-DMX512 Pro", DMXDevice::EUROLITE)
 		->addOption("sACN", DMXDevice::SACN)
         ->addOption("DMXKing", DMXDevice::DMXKING)
-		->addOption("Open DMX (FTDI)", DMXDevice::OPENDMX_FTDI);
+		->addOption("Open DMX (FTDI)", DMXDevice::OPENDMX_FTDI)
+		->addOption("DMXKing (FTDI)", DMXDevice::DMXKING_FTDI);
 	dmxType->setValueWithKey("Open DMX");
 
 	dmxConnected = addBoolParameter("Connected", "DMX is connected ?", false);

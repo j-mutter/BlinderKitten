@@ -226,6 +226,12 @@
     <ClCompile Include="..\..\Source\Common\DMX\device\DMXKingManager.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\Source\Common\DMX\device\DMXKingFTDIDevice.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Common\DMX\device\DMXKingFTDIManager.cpp">
+      <ExcludedFromBuild>true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Common\DMX\device\DMXEuroliteDevice.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -3545,6 +3551,8 @@
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXEnttecProDevice.h"/>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXKingDevice.h"/>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXKingManager.h"/>
+    <ClInclude Include="..\..\Source\Common\DMX\device\DMXKingFTDIDevice.h"/>
+    <ClInclude Include="..\..\Source\Common\DMX\device\DMXKingFTDIManager.h"/>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXEuroliteDevice.h"/>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXOpenUSBDevice.h"/>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXOpenUSBFTDIDevice.h"/>

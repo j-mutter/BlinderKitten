@@ -203,6 +203,14 @@
                   file="Source/Common/DMX/device/DMXKingManager.cpp"/>
             <FILE id="DMXKngM2" name="DMXKingManager.h" compile="0" resource="0"
                   file="Source/Common/DMX/device/DMXKingManager.h"/>
+            <FILE id="eXqj3X" name="DMXKingFTDIDevice.cpp" compile="0" resource="0"
+                  file="Source/Common/DMX/device/DMXKingFTDIDevice.cpp"/>
+            <FILE id="q8Ie5p" name="DMXKingFTDIDevice.h" compile="0" resource="0"
+                  file="Source/Common/DMX/device/DMXKingFTDIDevice.h"/>
+            <FILE id="tlWLib" name="DMXKingFTDIManager.cpp" compile="0" resource="0"
+                  file="Source/Common/DMX/device/DMXKingFTDIManager.cpp"/>
+            <FILE id="rpQT4I" name="DMXKingFTDIManager.h" compile="0" resource="0"
+                  file="Source/Common/DMX/device/DMXKingFTDIManager.h"/>
             <FILE id="lNcEcE" name="DMXEuroliteDevice.cpp" compile="0" resource="0"
                   file="Source/Common/DMX/device/DMXEuroliteDevice.cpp"/>
             <FILE id="eEhRpL" name="DMXEuroliteDevice.h" compile="0" resource="0"

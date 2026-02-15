@@ -36,6 +36,8 @@
 #include "DMX/device/DMXEuroliteDevice.cpp"
 #include "DMX/device/DMXSACNDevice.cpp"
 #include "DMX/device/DMXOpenUSBFTDIDevice.cpp"
+#include "DMX/device/DMXKingFTDIManager.cpp"
+#include "DMX/device/DMXKingFTDIDevice.cpp"
 #include "DMX/DMXManager.cpp"
 
 #include "Helpers/SceneHelpers.cpp"
