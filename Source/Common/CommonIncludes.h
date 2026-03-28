@@ -39,6 +39,7 @@
 #include "DMX/device/DMXKingFTDIManager.h"
 #include "DMX/device/DMXKingFTDIDevice.h"
 #include "DMX/device/DMXOpenUSBFTDIDevice.h"
+#include "DMX/device/DMXUSBDevice.h"
 
 #include "Helpers/SceneHelpers.h"
 

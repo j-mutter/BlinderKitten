@@ -24,16 +24,10 @@ DMXInterface::DMXInterface() :
 	dmxType = addEnumParameter("DMX Type", "Choose the type of dmx interface you want to connect");
 
 	dmxType
-		->addOption("Open DMX", DMXDevice::OPENDMX)
-		->addOption("Enttec DMX Pro", DMXDevice::ENTTEC_DMXPRO)
-		->addOption("Enttec DMX MkII", DMXDevice::ENTTEC_MK2)
+		->addOption("USB DMX", DMXDevice::USB_DMX)
 		->addOption("Art-Net", DMXDevice::ARTNET)
-		->addOption("Eurolite USB-DMX512 Pro", DMXDevice::EUROLITE)
-		->addOption("sACN", DMXDevice::SACN)
-        ->addOption("DMXKing", DMXDevice::DMXKING)
-		->addOption("Open DMX (FTDI)", DMXDevice::OPENDMX_FTDI)
-		->addOption("DMXKing (FTDI)", DMXDevice::DMXKING_FTDI);
-	dmxType->setValueWithKey("Open DMX");
+		->addOption("sACN", DMXDevice::SACN);
+	dmxType->setValueWithKey("USB DMX");
 
 	dmxConnected = addBoolParameter("Connected", "DMX is connected ?", false);
 	dmxConnected->isControllableFeedbackOnly = true;
