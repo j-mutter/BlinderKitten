@@ -395,6 +395,14 @@
           <FILE id="co1tht" name="VirtualFaderAction.h" compile="0" resource="0"
                 file="Source/Definitions/Actions/VirtualFaderAction.h"/>
         </GROUP>
+        <GROUP id="BKAst01" name="Asset">
+          <FILE id="BKAst02" name="BKAsset.cpp" compile="1" resource="0" file="Source/Definitions/Asset/BKAsset.cpp"/>
+          <FILE id="BKAst03" name="BKAsset.h" compile="0" resource="0" file="Source/Definitions/Asset/BKAsset.h"/>
+          <FILE id="BKAst04" name="BKAssetManager.cpp" compile="1" resource="0" file="Source/Definitions/Asset/BKAssetManager.cpp"/>
+          <FILE id="BKAst05" name="BKAssetManager.h" compile="0" resource="0" file="Source/Definitions/Asset/BKAssetManager.h"/>
+          <FILE id="BKAst06" name="BKAssetManagerUI.cpp" compile="1" resource="0" file="Source/Definitions/Asset/BKAssetManagerUI.cpp"/>
+          <FILE id="BKAst07" name="BKAssetManagerUI.h" compile="0" resource="0" file="Source/Definitions/Asset/BKAssetManagerUI.h"/>
+        </GROUP>
         <GROUP id="{233644E1-12BD-A331-F6AE-C2A52723F793}" name="Assistant">
           <FILE id="qQxHMP" name="Assistant.cpp" compile="1" resource="0" file="Source/Definitions/Assistant/Assistant.cpp"/>
           <FILE id="uexuKL" name="Assistant.h" compile="0" resource="0" file="Source/Definitions/Assistant/Assistant.h"/>

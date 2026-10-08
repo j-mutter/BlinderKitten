@@ -36,6 +36,7 @@ class Layout;
 class Tracker;
 class SelectionMaster;
 class Bundle;
+class BKAsset;
 class DMXArtNetDevice;
 
 
@@ -68,6 +69,7 @@ public:
     HashMap<int, SelectionMaster*>selectionMasters;
     HashMap<int, Layout*>layouts;
     HashMap<int, Bundle*>bundles;
+    HashMap<int, BKAsset*>assets;
 
     Array<Cuelist*> cuelistPoolUpdating;
     Array<Cuelist*> cuelistPoolWaiting;
@@ -168,6 +170,8 @@ public:
     void unregisterSelectionMaster(SelectionMaster* p);
     void registerBundle(Bundle* p, int id, bool swap = false);
     void unregisterBundle(Bundle* p);
+    void registerAsset(BKAsset* p, int id, bool swap = false);
+    void unregisterAsset(BKAsset* p);
 
     void pleaseUpdate(Cuelist* c);
     void pleaseUpdate(SubFixtureChannel* f);
@@ -203,6 +207,7 @@ public:
     Tracker* getTrackerById(int id);
     SelectionMaster* getSelectionMasterById(int id);
     Bundle* getBundleById(int id);
+    BKAsset* getAssetById(int id);
 
     void swoppedCuelist(Cuelist* c);
     void swoppedEffect(Effect* c);

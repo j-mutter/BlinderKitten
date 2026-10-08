@@ -15,6 +15,7 @@
 #include "../SubFixture/SubFixture.h"
 #include "../ChannelFamily/ChannelType/ChannelType.h"
 #include "../FixtureType/FixtureType.h"
+#include "../../UI/GridView/GridAppearance.h"
 
 class Preset:
     public BaseItem
@@ -48,6 +49,8 @@ public:
     CriticalSection isComputing;
 
     std::shared_ptr <HashMap<ChannelType*, float>> getSubFixtureValues(SubFixture* f);
+
+    GridAppearance gridAppearance;
 
     Trigger* loadToProgrammerBtn;
     void triggerTriggered(Trigger* t) override;

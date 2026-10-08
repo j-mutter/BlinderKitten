@@ -89,6 +89,9 @@
     <Filter Include="BlinderKitten\Source\Definitions\Actions">
       <UniqueIdentifier>{42F98FF3-511A-2123-F59A-C2ED8CBD09B1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BlinderKitten\Source\Definitions\Asset">
+      <UniqueIdentifier>{E81E1760-C5DA-AE1F-79DC-BF5D38189F59}</UniqueIdentifier>
+    </Filter>
     <Filter Include="BlinderKitten\Source\Definitions\Assistant">
       <UniqueIdentifier>{D2A9376D-F965-E48A-0B09-7102F83E1DF7}</UniqueIdentifier>
     </Filter>
@@ -1443,6 +1446,15 @@
     </ClCompile>
     <ClCompile Include="..\..\Source\Definitions\Actions\VirtualFaderAction.cpp">
       <Filter>BlinderKitten\Source\Definitions\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAsset.cpp">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManager.cpp">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.cpp">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Definitions\Assistant\Assistant.cpp">
       <Filter>BlinderKitten\Source\Definitions\Assistant</Filter>
@@ -5375,6 +5387,15 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\Definitions\Actions\VirtualFaderAction.h">
       <Filter>BlinderKitten\Source\Definitions\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAsset.h">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManager.h">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.h">
+      <Filter>BlinderKitten\Source\Definitions\Asset</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Definitions\Assistant\Assistant.h">
       <Filter>BlinderKitten\Source\Definitions\Assistant</Filter>

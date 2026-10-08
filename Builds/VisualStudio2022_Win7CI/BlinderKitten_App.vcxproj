@@ -324,6 +324,9 @@
     <ClCompile Include="..\..\Source\Definitions\Actions\TrackerAction.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\Actions\VirtualButtonAction.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\Actions\VirtualFaderAction.cpp"/>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAsset.cpp"/>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManager.cpp"/>
+    <ClCompile Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\Assistant\Assistant.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\BKPathPreset\BKPathPreset.cpp"/>
     <ClCompile Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManager.cpp"/>
@@ -3617,6 +3620,9 @@
     <ClInclude Include="..\..\Source\Definitions\Actions\TrackerAction.h"/>
     <ClInclude Include="..\..\Source\Definitions\Actions\VirtualButtonAction.h"/>
     <ClInclude Include="..\..\Source\Definitions\Actions\VirtualFaderAction.h"/>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAsset.h"/>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManager.h"/>
+    <ClInclude Include="..\..\Source\Definitions\Asset\BKAssetManagerUI.h"/>
     <ClInclude Include="..\..\Source\Definitions\Assistant\Assistant.h"/>
     <ClInclude Include="..\..\Source\Definitions\BKPathPreset\BKPathPreset.h"/>
     <ClInclude Include="..\..\Source\Definitions\BKPathPreset\BKPathPresetManager.h"/>

@@ -45,6 +45,7 @@
 #include "./Definitions/Multiplicator/MultiplicatorManager.h"
 #include "./Definitions/Layout/LayoutManager.h"
 #include "./Definitions/Bundle/BundleManager.h"
+#include "./Definitions/Asset/BKAssetManager.h"
 
 #include "./Definitions/DataTransferManager/DataTransferManager.h"
 #include "./Definitions/Fixture/FixtureMultiEditor.h"
@@ -286,6 +287,7 @@ BKEngine::BKEngine() :
 	addChildControllableContainer(FixtureTypeManager::getInstance());
 	addChildControllableContainer(FixtureManager::getInstance());
 	addChildControllableContainer(GroupManager::getInstance());
+	addChildControllableContainer(BKAssetManager::getInstance());
 	addChildControllableContainer(PresetManager::getInstance());
 	addChildControllableContainer(CommandManager::getInstance());
 	addChildControllableContainer(CuelistManager::getInstance());
@@ -408,6 +410,7 @@ BKEngine::~BKEngine()
 
 
 	BundleManager::deleteInstance();
+	BKAssetManager::deleteInstance();
 	LayoutManager::deleteInstance();
 	MultiplicatorManager::deleteInstance();
 	StampManager::deleteInstance();
@@ -498,6 +501,7 @@ void BKEngine::clearInternal()
 	CurvePresetManager::getInstance()->clear();
 	LayoutManager::getInstance()->clear();
 	BundleManager::getInstance()->clear();
+	BKAssetManager::getInstance()->clear();
 
 	VirtualButtonGrid::getInstance()->initCells();
 	VirtualFaderColGrid::getInstance()->initCells();
@@ -586,6 +590,9 @@ var BKEngine::getJSONData(bool includeNonOverriden)
 	var gData = GroupManager::getInstance()->getJSONData(includeNonOverriden);
 	if (!gData.isVoid() && gData.getDynamicObject()->getProperties().size() > 0) data.getDynamicObject()->setProperty(GroupManager::getInstance()->shortName, gData);
 
+	var assetData = BKAssetManager::getInstance()->getJSONData(includeNonOverriden);
+	if (!assetData.isVoid() && assetData.getDynamicObject()->getProperties().size() > 0) data.getDynamicObject()->setProperty(BKAssetManager::getInstance()->shortName, assetData);
+
 	var pData = PresetManager::getInstance()->getJSONData(includeNonOverriden);
 	if (!pData.isVoid() && pData.getDynamicObject()->getProperties().size() > 0) data.getDynamicObject()->setProperty(PresetManager::getInstance()->shortName, pData);
 
@@ -666,6 +673,7 @@ void BKEngine::loadJSONDataInternalEngine(var data, ProgressTask* loadingTask)
 	ProgressTask* dTask = loadingTask->addTask("Fixtures");
 	// ProgressTask* fTask = loadingTask->addTask("SubFixtures");
 	ProgressTask* gTask = loadingTask->addTask("Groups");
+	ProgressTask* assetTask = loadingTask->addTask("Assets");
 	ProgressTask* pTask = loadingTask->addTask("Presets");
 	ProgressTask* cTask = loadingTask->addTask("Commands");
 	ProgressTask* clTask = loadingTask->addTask("Cuelists");
@@ -712,6 +720,11 @@ void BKEngine::loadJSONDataInternalEngine(var data, ProgressTask* loadingTask)
 	GroupManager::getInstance()->loadJSONData(data.getProperty(GroupManager::getInstance()->shortName, var()));
 	gTask->setProgress(1);
 	gTask->end();
+
+	assetTask->start();
+	BKAssetManager::getInstance()->loadJSONData(data.getProperty(BKAssetManager::getInstance()->shortName, var()));
+	assetTask->setProgress(1);
+	assetTask->end();
 
 	pTask->start();
 	PresetManager::getInstance()->loadJSONData(data.getProperty(PresetManager::getInstance()->shortName, var()));
@@ -938,6 +951,7 @@ void BKEngine::importMochi(var data)
 	FixtureTypeManager::getInstance()->addItemsFromData(data.getProperty(FixtureTypeManager::getInstance()->shortName, var()));
 	FixtureManager::getInstance()->addItemsFromData(data.getProperty(FixtureManager::getInstance()->shortName, var()));
 	GroupManager::getInstance()->addItemsFromData(data.getProperty(GroupManager::getInstance()->shortName, var()));
+	BKAssetManager::getInstance()->addItemsFromData(data.getProperty(BKAssetManager::getInstance()->shortName, var()));
 	PresetManager::getInstance()->addItemsFromData(data.getProperty(PresetManager::getInstance()->shortName, var()));
 	CommandManager::getInstance()->addItemsFromData(data.getProperty(CommandManager::getInstance()->shortName, var()));
 	CuelistManager::getInstance()->addItemsFromData(data.getProperty(CuelistManager::getInstance()->shortName, var()));
@@ -997,6 +1011,7 @@ void BKEngine::exportSelection()
 	data.getDynamicObject()->setProperty(FixtureTypeManager::getInstance()->shortName, FixtureTypeManager::getInstance()->getExportSelectionData());
 	data.getDynamicObject()->setProperty(FixtureManager::getInstance()->shortName, FixtureManager::getInstance()->getExportSelectionData());
 	data.getDynamicObject()->setProperty(GroupManager::getInstance()->shortName, GroupManager::getInstance()->getExportSelectionData());
+	data.getDynamicObject()->setProperty(BKAssetManager::getInstance()->shortName, BKAssetManager::getInstance()->getExportSelectionData());
 	data.getDynamicObject()->setProperty(PresetManager::getInstance()->shortName, PresetManager::getInstance()->getExportSelectionData());
 	data.getDynamicObject()->setProperty(CommandManager::getInstance()->shortName, CommandManager::getInstance()->getExportSelectionData());
 	data.getDynamicObject()->setProperty(CuelistManager::getInstance()->shortName, CuelistManager::getInstance()->getExportSelectionData());

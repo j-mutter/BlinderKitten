@@ -135,6 +135,9 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/TrackerAction_c5bb14e.o \
   $(JUCE_OBJDIR)/VirtualButtonAction_1210c9b3.o \
   $(JUCE_OBJDIR)/VirtualFaderAction_b95e624b.o \
+  $(JUCE_OBJDIR)/BKAsset_9c8c427a.o \
+  $(JUCE_OBJDIR)/BKAssetManager_d891545d.o \
+  $(JUCE_OBJDIR)/BKAssetManagerUI_3a8e2af1.o \
   $(JUCE_OBJDIR)/Assistant_feae32ff.o \
   $(JUCE_OBJDIR)/BKPathPreset_490b261.o \
   $(JUCE_OBJDIR)/BKPathPresetManager_82b18296.o \
@@ -599,6 +602,21 @@ $(JUCE_OBJDIR)/VirtualButtonAction_1210c9b3.o: ../../Source/Definitions/Actions/
 $(JUCE_OBJDIR)/VirtualFaderAction_b95e624b.o: ../../Source/Definitions/Actions/VirtualFaderAction.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling VirtualFaderAction.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BKAsset_9c8c427a.o: ../../Source/Definitions/Asset/BKAsset.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling BKAsset.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BKAssetManager_d891545d.o: ../../Source/Definitions/Asset/BKAssetManager.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling BKAssetManager.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/BKAssetManagerUI_3a8e2af1.o: ../../Source/Definitions/Asset/BKAssetManagerUI.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling BKAssetManagerUI.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/Assistant_feae32ff.o: ../../Source/Definitions/Assistant/Assistant.cpp

@@ -40,6 +40,7 @@ Preset::Preset(var params) :
 	objectType(params.getProperty("type", "Preset").toString()),
 	objectData(params),
     devTypeParam(),
+	gridAppearance(),
 	subFixtureValues("Subfixtures")
 {
 	saveAndLoadRecursiveData = true;
@@ -76,6 +77,7 @@ Preset::Preset(var params) :
 	// to add a manager with defined data
 	subFixtureValues.selectItemWhenCreated = false;
 	subFixtureValues.comparator.compareFunc = comparePresetContent;
+	addChildControllableContainer(&gridAppearance);
 	addChildControllableContainer(&subFixtureValues);
 
 	Brain::getInstance()->registerPreset(this, id->getValue());
@@ -113,6 +115,9 @@ void Preset::onControllableFeedbackUpdateInternal(ControllableContainer* cc, Con
 	int defaultPresetId = dynamic_cast<BKEngine*>(Engine::mainEngine)->defaultPresetId->intValue();
 	if (defaultPresetId == id->intValue()) {
 		Brain::getInstance()->defaultValuesNeedRefresh = true;
+	}
+	if (cc == &gridAppearance) {
+		PresetManager::getInstance()->managerNotifier.addMessage(new PresetManager::ManagerEvent(PresetManager::ManagerEvent::NEEDS_UI_UPDATE));
 	}
 }
 
