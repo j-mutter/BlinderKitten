@@ -1183,10 +1183,13 @@
     <ClCompile Include="..\..\Source\UI\GridView\FixtureGridView.cpp">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\UI\GridView\GridView.cpp">
+    <ClCompile Include="..\..\Source\UI\GridView\GridAppearance.cpp">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\UI\GridView\GridViewButton.cpp">
+      <Filter>BlinderKitten\Source\UI\GridView</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\UI\GridView\GridView.cpp">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\UI\GridView\GroupGridView.cpp">
@@ -1297,22 +1300,10 @@
     <ClCompile Include="..\..\Source\Common\DMX\device\DMXKingManager.cpp">
       <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Common\DMX\device\DMXKingFTDIDevice.cpp">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Common\DMX\device\DMXKingFTDIManager.cpp">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Common\DMX\device\DMXEuroliteDevice.cpp">
       <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Common\DMX\device\DMXOpenUSBDevice.cpp">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Common\DMX\device\DMXOpenUSBFTDIDevice.cpp">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\Common\DMX\device\DMXUSBDevice.cpp">
       <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\Common\DMX\device\DMXSACNDevice.cpp">
@@ -5136,10 +5127,13 @@
     <ClInclude Include="..\..\Source\UI\GridView\FixtureGridView.h">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\UI\GridView\GridView.h">
+    <ClInclude Include="..\..\Source\UI\GridView\GridAppearance.h">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\GridView\GridViewButton.h">
+      <Filter>BlinderKitten\Source\UI\GridView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\UI\GridView\GridView.h">
       <Filter>BlinderKitten\Source\UI\GridView</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\UI\GridView\GroupGridView.h">
@@ -5256,22 +5250,10 @@
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXKingManager.h">
       <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\Common\DMX\device\DMXKingFTDIDevice.h">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Common\DMX\device\DMXKingFTDIManager.h">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXEuroliteDevice.h">
       <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXOpenUSBDevice.h">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Common\DMX\device\DMXOpenUSBFTDIDevice.h">
-      <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\Common\DMX\device\DMXUSBDevice.h">
       <Filter>BlinderKitten\Source\Common\DMX\device</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\Common\DMX\device\DMXSACNDevice.h">

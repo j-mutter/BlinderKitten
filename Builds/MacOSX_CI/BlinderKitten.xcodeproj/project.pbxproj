@@ -61,6 +61,7 @@
 		2FFE776FB252EDAA86D59D05 /* MapperManagerUI.cpp */ = {isa = PBXBuildFile; fileRef = 7937232407EF2E3EBD18E0AC; };
 		319F29AB5D5A69799C6E91BE /* CueTimecode.cpp */ = {isa = PBXBuildFile; fileRef = D79D10227F36E0B03C2ED6BA; };
 		334716B82257454146055DC3 /* CarouselGridView.cpp */ = {isa = PBXBuildFile; fileRef = 452A6A4AB97F3A6CF4237951; };
+		34BCEAA78D25356B169E6815 /* GridAppearance.cpp */ = {isa = PBXBuildFile; fileRef = 4A853690EF95F869C701BF76; };
 		35FEDF25CC8FC709E3F41B87 /* UserInputManager.cpp */ = {isa = PBXBuildFile; fileRef = A857033014E001D803DAA7F2; };
 		3610C2BD9D7502D7DE01F0F8 /* GroupManager.cpp */ = {isa = PBXBuildFile; fileRef = 71BA9BB2DF123B273E9F2C14; };
 		36C526A399B5C7E3A4D60C87 /* ChannelFamily.cpp */ = {isa = PBXBuildFile; fileRef = 81DD483150B84BD1597D1C15; };
@@ -382,6 +383,7 @@
 		49482E859F6AF960EF1DEFB4 /* DMXEuroliteDevice.h */ /* DMXEuroliteDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMXEuroliteDevice.h; path = ../../Source/Common/DMX/device/DMXEuroliteDevice.h; sourceTree = SOURCE_ROOT; };
 		499845ABEE168A07449EC477 /* VirtualButton.h */ /* VirtualButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VirtualButton.h; path = ../../Source/UI/VirtualButtons/VirtualButton.h; sourceTree = SOURCE_ROOT; };
 		4A6CA0C393F81BC1392432D5 /* OSCInputEditor.h */ /* OSCInputEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OSCInputEditor.h; path = ../../Source/Definitions/Interface/interfaces/osc/ui/OSCInputEditor.h; sourceTree = SOURCE_ROOT; };
+		4A853690EF95F869C701BF76 /* GridAppearance.cpp */ /* GridAppearance.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = GridAppearance.cpp; path = ../../Source/UI/GridView/GridAppearance.cpp; sourceTree = SOURCE_ROOT; };
 		4AA08A6F8AD84AB20D7FD9A5 /* FixturePatchCorrection.cpp */ /* FixturePatchCorrection.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FixturePatchCorrection.cpp; path = ../../Source/Definitions/Fixture/FixturePatchCorrection.cpp; sourceTree = SOURCE_ROOT; };
 		4B74D5B746567488A8E58CB2 /* App */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlinderKitten.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1D5EA031AD933BD9C85DCE /* Clock.cpp */ /* Clock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Clock.cpp; path = ../../Source/UI/Clock.cpp; sourceTree = SOURCE_ROOT; };
@@ -432,7 +434,6 @@
 		60F2DCB1FD679CB7D88A0F90 /* SelectionMasterAction.cpp */ /* SelectionMasterAction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SelectionMasterAction.cpp; path = ../../Source/Definitions/Actions/SelectionMasterAction.cpp; sourceTree = SOURCE_ROOT; };
 		6123FF75EBC12C61A575088E /* BundleAction.cpp */ /* BundleAction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BundleAction.cpp; path = ../../Source/Definitions/Actions/BundleAction.cpp; sourceTree = SOURCE_ROOT; };
 		62DC17785A70BDB1F0D4A0B4 /* juce_audio_utils */ /* juce_audio_utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_utils; path = ../../JUCE/modules/juce_audio_utils; sourceTree = SOURCE_ROOT; };
-		62FBC54E1B2F8074AEDED1D3 /* DMXKingFTDIManager.h */ /* DMXKingFTDIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMXKingFTDIManager.h; path = ../../Source/Common/DMX/device/DMXKingFTDIManager.h; sourceTree = SOURCE_ROOT; };
 		638AF4BC5875F6430FC0529B /* SubFixtureChannel.cpp */ /* SubFixtureChannel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SubFixtureChannel.cpp; path = ../../Source/Definitions/SubFixture/SubFixtureChannel.cpp; sourceTree = SOURCE_ROOT; };
 		6402E85404CFF6EE269DB736 /* FixtureTypeChannel.cpp */ /* FixtureTypeChannel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FixtureTypeChannel.cpp; path = ../../Source/Definitions/FixtureType/FixtureTypeChannel.cpp; sourceTree = SOURCE_ROOT; };
 		644206FA9F1CA1A4FC0AAF3A /* FixtureTypeChannelManager.h */ /* FixtureTypeChannelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FixtureTypeChannelManager.h; path = ../../Source/Definitions/FixtureType/FixtureTypeChannelManager.h; sourceTree = SOURCE_ROOT; };
@@ -459,7 +460,6 @@
 		6E787EF0ED01C1F05D17197D /* SelectionMasterManager.h */ /* SelectionMasterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SelectionMasterManager.h; path = ../../Source/Definitions/SelectionMaster/SelectionMasterManager.h; sourceTree = SOURCE_ROOT; };
 		6E818247E60DF04B4B13A842 /* Programmer.cpp */ /* Programmer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Programmer.cpp; path = ../../Source/Definitions/Programmer/Programmer.cpp; sourceTree = SOURCE_ROOT; };
 		6FD0F0A2476EDBBB5EFE66F4 /* Foundation.framework */ /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7038C33073C120509439FC59 /* DMXKingFTDIManager.cpp */ /* DMXKingFTDIManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DMXKingFTDIManager.cpp; path = ../../Source/Common/DMX/device/DMXKingFTDIManager.cpp; sourceTree = SOURCE_ROOT; };
 		70D598BB86E204F0BC11F5E7 /* CommandManagerUI.cpp */ /* CommandManagerUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CommandManagerUI.cpp; path = ../../Source/Definitions/Command/CommandManagerUI.cpp; sourceTree = SOURCE_ROOT; };
 		70EEC5AF7380F82A5D461BE8 /* Icon.icns */ /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = file.icns; name = Icon.icns; path = Icon.icns; sourceTree = SOURCE_ROOT; };
 		7125B7212F9694B1BC24DA40 /* GridView.h */ /* GridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GridView.h; path = ../../Source/UI/GridView/GridView.h; sourceTree = SOURCE_ROOT; };
@@ -485,7 +485,6 @@
 		7A0E1551063E017484EDEFBB /* NDIDeviceChooser.h */ /* NDIDeviceChooser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NDIDeviceChooser.h; path = ../../Source/Common/NDI/ui/NDIDeviceChooser.h; sourceTree = SOURCE_ROOT; };
 		7A77445F4CFCE2026BA5C4E5 /* icon.png */ /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../Ressources/icon.png; sourceTree = SOURCE_ROOT; };
 		7AFC413AC8C5156599197A0E /* PresetValue.cpp */ /* PresetValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PresetValue.cpp; path = ../../Source/Definitions/Preset/PresetValue.cpp; sourceTree = SOURCE_ROOT; };
-		7AFEA28AFED863A28834B949 /* DMXKingFTDIDevice.h */ /* DMXKingFTDIDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DMXKingFTDIDevice.h; path = ../../Source/Common/DMX/device/DMXKingFTDIDevice.h; sourceTree = SOURCE_ROOT; };
 		7B147D04AE90D16A4FBC0371 /* CommandTiming.cpp */ /* CommandTiming.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = CommandTiming.cpp; path = ../../Source/Definitions/Command/CommandTiming.cpp; sourceTree = SOURCE_ROOT; };
 		7B31B697AB7F328E21084A8C /* Preset.h */ /* Preset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Preset.h; path = ../../Source/Definitions/Preset/Preset.h; sourceTree = SOURCE_ROOT; };
 		7C663D18D81B15BA87D0FA15 /* Multiplicator.cpp */ /* Multiplicator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Multiplicator.cpp; path = ../../Source/Definitions/Multiplicator/Multiplicator.cpp; sourceTree = SOURCE_ROOT; };
@@ -590,7 +589,6 @@
 		AD861E96EB2578CD4E903BF6 /* FixtureMultiEditor.h */ /* FixtureMultiEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FixtureMultiEditor.h; path = ../../Source/Definitions/Fixture/FixtureMultiEditor.h; sourceTree = SOURCE_ROOT; };
 		ADB3F0D5C6D1C22D19EDA773 /* GenericAction.h */ /* GenericAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GenericAction.h; path = ../../Source/Definitions/Actions/GenericAction.h; sourceTree = SOURCE_ROOT; };
 		AEB0A988388E3068B6320462 /* PatchSheet.h */ /* PatchSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PatchSheet.h; path = ../../Source/UI/PatchSheet/PatchSheet.h; sourceTree = SOURCE_ROOT; };
-		AED256DDB9835C6A4966AAF1 /* DMXKingFTDIDevice.cpp */ /* DMXKingFTDIDevice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DMXKingFTDIDevice.cpp; path = ../../Source/Common/DMX/device/DMXKingFTDIDevice.cpp; sourceTree = SOURCE_ROOT; };
 		AED5F19D85468BD94B808BB9 /* FixtureTypeManagerUI.cpp */ /* FixtureTypeManagerUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FixtureTypeManagerUI.cpp; path = ../../Source/Definitions/FixtureType/FixtureTypeManagerUI.cpp; sourceTree = SOURCE_ROOT; };
 		AF0ACD9868DA66DDB69479BF /* SerialInterface.cpp */ /* SerialInterface.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SerialInterface.cpp; path = ../../Source/Definitions/Interface/interfaces/serial/SerialInterface.cpp; sourceTree = SOURCE_ROOT; };
 		B0B243B44EA568048CA8BE61 /* MTCReceiver.h */ /* MTCReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MTCReceiver.h; path = ../../Source/Common/MIDI/MTCReceiver.h; sourceTree = SOURCE_ROOT; };
@@ -682,6 +680,7 @@
 		DBAAAC7B940F52C312B35928 /* ComponentType.h */ /* ComponentType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ComponentType.h; path = ../../Source/Common/CommonClasses/ComponentType.h; sourceTree = SOURCE_ROOT; };
 		DBBAB663E6FF9BF8F7D6E374 /* VirtualButtonAction.cpp */ /* VirtualButtonAction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = VirtualButtonAction.cpp; path = ../../Source/Definitions/Actions/VirtualButtonAction.cpp; sourceTree = SOURCE_ROOT; };
 		DC04BB0CD4475F458E7667AC /* MIDIMappingEditor.cpp */ /* MIDIMappingEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MIDIMappingEditor.cpp; path = ../../Source/Definitions/Interface/interfaces/midi/ui/MIDIMappingEditor.cpp; sourceTree = SOURCE_ROOT; };
+		DC695B85B595F0743774128B /* GridAppearance.h */ /* GridAppearance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GridAppearance.h; path = ../../Source/UI/GridView/GridAppearance.h; sourceTree = SOURCE_ROOT; };
 		DD54EEB4980A62663DB01445 /* juce_audio_processors */ /* juce_audio_processors */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_processors; path = ../../JUCE/modules/juce_audio_processors; sourceTree = SOURCE_ROOT; };
 		DEB09578F39DDBA089B7E0DA /* TimingPresetManagerUI.cpp */ /* TimingPresetManagerUI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TimingPresetManagerUI.cpp; path = ../../Source/Definitions/TimingPreset/TimingPresetManagerUI.cpp; sourceTree = SOURCE_ROOT; };
 		DF4333E5CEE6FFB50BB985B5 /* VirtualFaderColManager.h */ /* VirtualFaderColManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VirtualFaderColManager.h; path = ../../Source/UI/VirtualFaders/VirtualFaderColManager.h; sourceTree = SOURCE_ROOT; };
@@ -1652,10 +1651,12 @@
 				4CF698B7D53CB4227CF11F69,
 				181A07662AAC881A0B6981AA,
 				D48BD61FA8FC28C2824078AC,
-				960E86B3FF60358EEE6CE51C,
-				7125B7212F9694B1BC24DA40,
+				4A853690EF95F869C701BF76,
+				DC695B85B595F0743774128B,
 				C9CBF53DA8C6FA23F6C1F5AA,
 				05074443424F134BE30D92C1,
+				960E86B3FF60358EEE6CE51C,
+				7125B7212F9694B1BC24DA40,
 				32ABCB57E27D3C7BAD1DBD5F,
 				C8BA219AFD2EC2DE763463AA,
 				7157545FC52CE7114A90AF0B,
@@ -1712,10 +1713,6 @@
 				C38E4152867860612D46197C,
 				1855D745B46C82FADB7C69A8,
 				EBA9BEBCBB8CBB6285BC2F5C,
-				AED256DDB9835C6A4966AAF1,
-				7AFEA28AFED863A28834B949,
-				7038C33073C120509439FC59,
-				62FBC54E1B2F8074AEDED1D3,
 				3CBA8F4337A7E507D8D40C07,
 				49482E859F6AF960EF1DEFB4,
 				014EDAA820EA34A7242D76BE,
@@ -2037,8 +2034,9 @@
 				DA907EAFD0653CC737B7CE3A,
 				412ABFC882BE7CECCCBD8123,
 				2447B1B2A179CCF99AF65202,
-				CFFC7472B7E745F965515CC4,
+				34BCEAA78D25356B169E6815,
 				9957313AEBFD32324E72C38A,
+				CFFC7472B7E745F965515CC4,
 				1A9BA58BBF4225291A991FC2,
 				72A36ECFF806C88045F2704E,
 				F60DC70F92C843C12612C071,
@@ -2255,7 +2253,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -2288,7 +2285,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -2331,6 +2327,7 @@
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
 					"$(SRCROOT)/../../External/NDI/include",
 					"$(SRCROOT)/../../External/libftdi/include/libftdi1",
+					"$(SRCROOT)/../../External/ftd2xx",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2346,7 +2343,7 @@
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include $(SRCROOT)/../../External/libftdi/include/libftdi1";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include $(SRCROOT)/../../External/libftdi/include/libftdi1 $(SRCROOT)/../../External/ftd2xx";
 				OTHER_LDFLAGS = "-lServus -lndi -lftdi1 -lusb-1.0 -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
@@ -2362,7 +2359,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/../../Release";
 				DEAD_CODE_STRIPPING = YES;
@@ -2407,6 +2403,7 @@
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
 					"$(SRCROOT)/../../External/NDI/include",
 					"$(SRCROOT)/../../External/libftdi/include/libftdi1",
+					"$(SRCROOT)/../../External/ftd2xx",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2422,8 +2419,8 @@
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include $(SRCROOT)/../../External/libftdi/include/libftdi1";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include $(SRCROOT)/../../External/libftdi/include/libftdi1 $(SRCROOT)/../../External/ftd2xx";
 				OTHER_LDFLAGS = "-lServus -lndi -lftdi1 -lusb-1.0 -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
@@ -2439,7 +2436,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/../../Release";
 				DEAD_CODE_STRIPPING = YES;
@@ -2484,6 +2480,7 @@
 					"$(SRCROOT)/../../External/libusb/include/libusb-1.0",
 					"$(SRCROOT)/../../External/NDI/include",
 					"$(SRCROOT)/../../External/libftdi/include/libftdi1",
+					"$(SRCROOT)/../../External/ftd2xx",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-App.plist;
@@ -2499,8 +2496,8 @@
 					"\"../../Modules/juce_simpleweb/libs/MacOSX/${CURRENT_ARCH}\"",
 				);
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include $(SRCROOT)/../../External/libftdi/include/libftdi1";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode $(SRCROOT)/../../JUCE/modules $(SRCROOT)/../../Modules $(SRCROOT)/../../Source $(SRCROOT)/../../Source/Definitions $(SRCROOT)/../../External/serial/include $(SRCROOT)/../../External/servus/include $(SRCROOT)/../../External/dnssd/include $(SRCROOT)/../../External/ois/include $(SRCROOT)/../../External/sdl/include $(SRCROOT)/../../External/libusb/include/libusb-1.0 $(SRCROOT)/../../External/NDI/include $(SRCROOT)/../../External/libftdi/include/libftdi1 $(SRCROOT)/../../External/ftd2xx";
 				OTHER_LDFLAGS = "-lServus -lndi -lftdi1 -lusb-1.0 -lssl -lcrypto -lz -rpath @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = norbertrostaing.BlinderKitten;
 				PRODUCT_NAME = "BlinderKitten";
@@ -2532,7 +2529,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -2581,7 +2577,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;

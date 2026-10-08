@@ -26,16 +26,8 @@ GridViewButton::~GridViewButton()
 
 void GridViewButton::updateFromAppearance(GridAppearance* a, String name)
 {
-    int assetId = a->iconAssetId->intValue();
-    BKAsset* asset = (assetId > 0) ? Brain::getInstance()->getAssetById(assetId) : nullptr;
-
-    if (asset != nullptr && asset->hasValidImage()) {
-        iconImage = asset->getImage();
-        setButtonText("");
-    } else {
-        iconImage = Image();
-        setButtonText(name);
-    }
+    iconImage = Image();
+    setButtonText(name);
 
     setColour(TextButton::buttonColourId, a->backgroundColour());
     setColour(TextButton::buttonOnColourId, a->highlightColour());

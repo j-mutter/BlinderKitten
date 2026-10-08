@@ -39,7 +39,7 @@ ifeq ($(CONFIG),Debug)
     TARGET_ARCH := 
   endif
 
-  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DDEBUG=1" "-D_DEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DORGANICUI_USE_WEBBROWSER=0" "-DLINK_PLATFORM_LINUX=1" "-DNDI_DISABLE=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b97" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags alsa freetype2 gl libcurl webkit2gtk-4.0 gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I../../External/NDI/include $(CPPFLAGS)
+  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DDEBUG=1" "-D_DEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DORGANICUI_USE_WEBBROWSER=0" "-DLINK_PLATFORM_LINUX=1" "-DNDI_DISABLE=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b97" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags $(shell ($(PKG_CONFIG) --exists webkit2gtk-4.1 && echo webkit2gtk-4.1) || echo webkit2gtk-4.0) alsa freetype2 gl libcurl gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I../../External/NDI/include -I../../External/libftdi/include/libftdi1 -I../../External/ftd2xx $(CPPFLAGS)
   JUCE_CPPFLAGS_APP :=  "-DJucePlugin_Build_VST=0" "-DJucePlugin_Build_VST3=0" "-DJucePlugin_Build_AU=0" "-DJucePlugin_Build_AUv3=0" "-DJucePlugin_Build_AAX=0" "-DJucePlugin_Build_Standalone=0" "-DJucePlugin_Build_Unity=0" "-DJucePlugin_Build_LV2=0"
   JUCE_TARGET_APP := BlinderKitten
 
@@ -60,7 +60,7 @@ ifeq ($(CONFIG),Release)
     TARGET_ARCH := 
   endif
 
-  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DNDEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DORGANICUI_USE_WEBBROWSER=0" "-DLINK_PLATFORM_LINUX=1" "-DNDI_DISABLE=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b97" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags alsa freetype2 gl libcurl webkit2gtk-4.0 gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I/usr/include/freetype2 -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I../../External/NDI/include $(CPPFLAGS)
+  JUCE_CPPFLAGS := $(DEPFLAGS) "-DLINUX=1" "-DNDEBUG=1" "-DJUCE_MODAL_LOOPS_PERMITTED=1" "-D_ITERATOR_DEBUG_LEVEL=1" "-DORGANICUI_USE_WEBBROWSER=0" "-DLINK_PLATFORM_LINUX=1" "-DNDI_DISABLE=1" "-DJUCER_LINUX_MAKE_30E7ABE=1" "-DJUCE_APP_VERSION=1.0.1b97" "-DJUCE_APP_VERSION_HEX=0x10001" $(shell $(PKG_CONFIG) --cflags $(shell ($(PKG_CONFIG) --exists webkit2gtk-4.1 && echo webkit2gtk-4.1) || echo webkit2gtk-4.0) alsa freetype2 gl libcurl gtk+-x11-3.0 freetype2) -pthread -I../../JuceLibraryCode -I../../JUCE/modules -I../../Modules -I/usr/include/freetype2 -I../../Source -I../../Source/Definitions -I../../External/serial/include -I../../External/servus/include -I../../External/dnssd/include -I../../External/ois/include -I../../External/sdl/include -I../../External/libusb/include/libusb-1.0 -I../../External/NDI/include -I../../External/libftdi/include/libftdi1 -I../../External/ftd2xx $(CPPFLAGS)
   JUCE_CPPFLAGS_APP :=  "-DJucePlugin_Build_VST=0" "-DJucePlugin_Build_VST3=0" "-DJucePlugin_Build_AU=0" "-DJucePlugin_Build_AUv3=0" "-DJucePlugin_Build_AAX=0" "-DJucePlugin_Build_Standalone=0" "-DJucePlugin_Build_Unity=0" "-DJucePlugin_Build_LV2=0"
   JUCE_TARGET_APP := BlinderKitten
 
@@ -81,8 +81,9 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/CuelistGridView_8ef10494.o \
   $(JUCE_OBJDIR)/EffectGridView_6b28bae.o \
   $(JUCE_OBJDIR)/FixtureGridView_2501c94c.o \
-  $(JUCE_OBJDIR)/GridView_42bfc13d.o \
+  $(JUCE_OBJDIR)/GridAppearance_8933b53c.o \
   $(JUCE_OBJDIR)/GridViewButton_de3fd58f.o \
+  $(JUCE_OBJDIR)/GridView_42bfc13d.o \
   $(JUCE_OBJDIR)/GroupGridView_5fc98182.o \
   $(JUCE_OBJDIR)/MapperGridView_2ac6085e.o \
   $(JUCE_OBJDIR)/PresetGridView_d172ffc.o \
@@ -330,14 +331,19 @@ $(JUCE_OBJDIR)/FixtureGridView_2501c94c.o: ../../Source/UI/GridView/FixtureGridV
 	@echo "Compiling FixtureGridView.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/GridView_42bfc13d.o: ../../Source/UI/GridView/GridView.cpp
+$(JUCE_OBJDIR)/GridAppearance_8933b53c.o: ../../Source/UI/GridView/GridAppearance.cpp
 	-$(V_AT)mkdir -p $(@D)
-	@echo "Compiling GridView.cpp"
+	@echo "Compiling GridAppearance.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/GridViewButton_de3fd58f.o: ../../Source/UI/GridView/GridViewButton.cpp
 	-$(V_AT)mkdir -p $(@D)
 	@echo "Compiling GridViewButton.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/GridView_42bfc13d.o: ../../Source/UI/GridView/GridView.cpp
+	-$(V_AT)mkdir -p $(@D)
+	@echo "Compiling GridView.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/GroupGridView_5fc98182.o: ../../Source/UI/GridView/GroupGridView.cpp
